@@ -1,0 +1,65 @@
+
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    margin: 0;
+    padding: 0px;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #FAFAFA;
+}
+
+.page {
+    width: 210mm;
+    height: 297mm;
+    padding: 5mm ;
+    /* padding: 10mm ; */
+    /* margin: 5mm ; */
+    border: 1px black solid;
+    border-radius: 5px;
+    background: white;
+}
+.pagemargin{
+    padding: 2mm !important;
+}
+
+article, section, div{
+    margin:1px !important;
+    padding: 1px !important;
+}
+
+td{
+    padding: 2px !important;
+    margin: 0 !important;
+}
+
+h1{
+    margin: 1px !important;
+}
+
+.box{
+    padding: 10px !important;
+    margin: 0px !important;
+}
+
+.message-header{
+    padding: 1px !important;
+}
+.message-body {
+    padding: 5px !important;
+}
+
+/* SEPCS STYLE */
+.border-1-primary{
+    border: 1px solid #00d1b2;
+}
+
+.vertical-text-rl{
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+}
