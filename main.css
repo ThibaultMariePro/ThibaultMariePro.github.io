@@ -69,6 +69,7 @@ table tbody tr:hover {
 }
 
 .th-title{
+    white-space: nowrap;
     text-align: left;
     color: navy;
 }
@@ -80,13 +81,19 @@ table tbody tr:hover {
 }
 .is-button:hover{
     transform: translate(1px, 2px);
-    background-color: rgba(0, 255, 0, 0.5);
+    background-color: #00ff0080;
     filter: drop-shadow(0px 0px 0px);
 }
 .is-flex{display: flex;}
+.flex-col{flex-direction: column;}
 .jccenter{justify-content: center;}
 .jceven{justify-content: space-evenly;}
 .aicenter{align-items: center;}
+.bg-is-navy{background-color: navy;}
+.txt-is-lime{color: lime;}
+.is-centered{text-align: center;}
+.is-justified{text-align: justify;}
+.m-auto{margin: auto;}
 
 #avatarheader{ 
     height: 128px;
@@ -104,8 +111,3 @@ table tbody tr:hover {
     border: 1px solid lime;
     border-radius: 5px 5px 5px 0px;
 }
-
-.bg-is-navy{background-color: navy;}
-.txt-is-lime{color: lime;}
-.is-centered{text-align: center;}
-.is-justified{text-align: justify;}
