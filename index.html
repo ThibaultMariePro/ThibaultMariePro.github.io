@@ -8,41 +8,188 @@
   <title>TMPRO</title>
 </head>
 <body>
-
   <header class="">
     <h1 class="bg-is-navy txt-is-lime">Hello World!</h1>
+    <hr>
     <div class="is-flex aicenter jceven">
-      <p>
-        Je suis developpeur, et m'interesse à trop de trucs.
+      <p id="disclaimer">
+        Je suis developpeur Web, et m'interesse à trop de trucs.
+        I'm a webdev, give me coffee please.
       </p>
-      <a href="">
-        <img id="avatarheader" src="https://github.com/ThibaultMariePro/assets/blob/main/EmnotAvatar.png?raw=true" alt="avatar de TIBO">
+      <a href="mailto:thibault.marie.pro@gmail.com" class="is-button">        
+          <img 
+          id="avatarheader" 
+          src="https://github.com/ThibaultMariePro/assets/blob/main/EmnotAvatar.png?raw=true" 
+          alt="avatar de TIBO"
+          title="✉️ thibault.marie.pro@gmail.com">
       </a>
-      <a href="https://github.com/ThibaultMariePro/">mon_github</a>
-      <a download href="https://github.com/ThibaultMariePro/cv/raw/main/pdf/CV310123.pdf">download mon_cv</a>
+      <div class="is-centered">
+        <h6>🔗</h6>
+        <a href="https://github.com/ThibaultMariePro/">my_github</a>
+        <hr>
+        <a download href="https://github.com/ThibaultMariePro/cv/raw/main/pdf/CV310123.pdf">
+          <button class="is-button">my_resume</button>
+        </a>
+      </div>
     </div>
   </header>
 
+  <hr>
   <section id="interests">
     <div>
       <ul>
         <li>
-          <h3>Papier scientifique sur la rhéologie des chats.</h3>
-          <a href="https://www.drgoulu.com/wp-content/uploads/2017/09/Rheology-of-cats.pdf" download>Rheology-of-cats.pdf</a>
+          <h3>La rhéologie des chats</h3>
+          🔗<a 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              href="https://theconversation.com/answering-the-question-that-won-me-the-ig-nobel-prize-are-cats-liquid-86589">
+                Article
+            </a>
+            <a href="https://www.drgoulu.com/wp-content/uploads/2017/09/Rheology-of-cats.pdf" download>
+              <button class="is-button">PDF</button>
+            </a>
         </li>
+
         <li>
           <h3>Rapport du Shift Project sur le déploiement de la sobriété numérique en France</h3>
-          <a href="https://theshiftproject.org/wp-content/uploads/2020/10/Deployer-la-sobriete-numerique_Rapport-complet_ShiftProject.pdf" download>Deployer-la-sobriete-numerique_Rapport-complet_ShiftProject.pdf</a>
+          🔗<a href="https://theshiftproject.org/article/pour-une-sobriete-numerique-rapport-shift/"
+            target="_blank" rel="noopener noreferrer">
+              Article
+            </a>
+          <a target="_blank" href="https://theshiftproject.org/wp-content/uploads/2020/10/Deployer-la-sobriete-numerique_Rapport-complet_ShiftProject.pdf" download>
+            <button class="is-button">PDF</button>
+          </a>
         </li>
+
         <li>
-          <h3>Norme RFC2549, sur le protocol internet par oiseaux</h3>
-          <a href="https://www.rfc-editor.org/rfc/pdfrfc/rfc2549.txt.pdf" download>rfc2549.txt.pdf</a>
+          <h3>Un standard pour la transmission des paquets IP sur pigeons voyageurs</h3>
+          🔗<a href="https://rfc1149.net/rfc1149.html"
+          target="_blank" rel="noopener noreferrer">
+            Article
+          </a>
+          <a target="_blank" href="https://www.rfc-editor.org/rfc/pdfrfc/rfc2549.txt.pdf" download>
+            <button class="is-button">PDF</button>
+          </a>
         </li>
 
       </ul>
     </div>
   </section>
+  <hr>
+      <section>
+    <table>
+      <h2>☕ Je deteste écrire des tableaux HTML</h2>
+      <thead>
+        <tr>
+          <th>Technologie</th>
+          <th>Contexte d'utilisation</th>
+          <th>Commentaire </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th class="th-title">⚙️ FRONT END</th>
+          <th></th>
+          <th></th>
+        </tr>
 
+        <tr>
+          <td>HTML/CSS</td>
+          <td>Auto-appris, on en voit un peu partout on va pas se mentir</td>
+          <td>Ça va, tranquille</td>
+        </tr>
+
+        <tr>
+          <td>JavaScript</td>
+          <td>Auto-appris</td>
+          <td>Youpi, un site web dynamique</td>
+        </tr>
+
+        <tr>
+          <td>Jquery</td>
+          <td>Auto-appris, vu en formation</td>
+          <td>Pratique on veut faire un peu plus joujou en front</td>
+        </tr>
+
+        <tr>
+          <td>Bootstrap</td>
+          <td>Auto-appris, vu en formation</td>
+          <td class="is-justified">J'ai appris parceque c'est un standard, mais c'est un peu lourd pour pas grand chose, mais c'est pratique, mais c'est un peu lourd pour pas grand chose, mais on fait aussi bien avec du flex ou du grid</td>
+        </tr>
+
+        <tr>
+          <td>Bulma</td>
+          <td>j'ai fait mon cv avec</td>
+          <td>c'est cool, faut aimer foutre des classes partout</td>
+        </tr>
+
+        <tr>
+          <td>Angular</td>
+          <td>Appris en formation</td>
+          <td>Sympa, j'aurai aimé pratiquer plus, je ferai ça un jour</td>
+        </tr>
+      <tr>
+        <th class="th-title">⚙️ BACK END</th>
+        <th></th>
+        <th></th>
+      </tr>
+        <tr>
+          <td>Symfony</td>
+          <td>Appris en formation</td>
+          <td>Stylé, pratique, effet "ah ouais quand même"</td>
+        </tr>
+        <tr>
+          <td>Node.js</td>
+          <td>Cool et documenté, EZ to handle</td>
+          <td>On peut faire du back avec JS ? Bon ben ok, feu. <br> Cool et documenté, EZ to handle</td>
+        </tr>
+        <tr>
+          <td>Nginx</td>
+          <td>Appris pendant un stage</td>
+          <td>Awesome configurable load balancing</td>
+        </tr>
+        <tr>
+          <td>Ernst Handel</td>
+          <td>Roland Mendel</td>
+          <td>Austria</td>
+        </tr>
+        <tr>
+          <td>Island Trading</td>
+          <td>Helen Bennett</td>
+          <td>UK</td>
+        </tr>
+        <tr>
+          <td>Laughing Bacchus Winecellars</td>
+          <td>Yoshi Tannamuri</td>
+          <td>Canada</td>
+        </tr>
+        <tr>
+          <td>Magazzini Alimentari Riuniti</td>
+          <td>Giovanni Rovelli</td>
+          <td>Italy</td>
+        </tr>
+        <tr>
+          <th class="th-title">⚙️ LANGUAGE</th>
+          <th></th>
+          <th></th>
+        </tr>
+        
+        <tr>
+          <td>Magazzini Alimentari Riuniti</td>
+          <td>Giovanni Rovelli</td>
+          <td>Italy</td>
+        </tr>
+        <tr>
+          <th class="th-title">⚙️ OTHER</th>
+
+          <th></th>
+          <th></th>
+        </tr> 
+      </tbody>
+
+    </table>
+  </section>
   
 </body>
 </html>
