@@ -4,109 +4,189 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="./output.css" rel="stylesheet">
-    <title>TIBO</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <link href="./output.css" rel="stylesheet" />
+    <title>💻 TIBO</title>
   </head>
-  <body>
-    <header class="">
-      <h1 class="bg-is-navy txt-is-lime ">Hello World!</h1>
+
+  <noscript>YOU HAVE TO ENABLE JAVASCRIPT TO FULLY ENJOY THIS WEBPAGE</noscript>
+
+  <script>
+    const frencheese = {
+      lang: "fr",
+      job: "Développeur Web Fullstack | Concepteur Développeur d'Applications",
+    };
+
+    const englisheddar = {
+      lang: "en",
+      job: "Fullstack Web Developer | Software Designer",
+    };
+
+    // state init
+    onload = () => {
+      // Set the language of the document
+      document.querySelector("#hello").innerHTML =
+        document.documentElement.lang === "en"
+          ? "Hello World! 🌍"
+          : "Salut le monde! 🌍";
+      // Set the language btn switcher
+      document.querySelector("#switchLangBtn").innerHTML =
+        document.documentElement.lang.toUpperCase();
+
+      const switchLangBtn = document
+        .querySelector("#switchLangBtn")
+        .addEventListener("click", switchLang);
+
+      const switchThemeBtn = document
+        .querySelector("#switchThemeBtn")
+        .addEventListener("click", switchTheme);
+    };
+
+    function switchLang() {
+      const lang = document.documentElement.lang;
+      document.documentElement.lang = lang === "en" ? "fr" : "en";
+      console.log(document.documentElement.lang);
+      switchLangBtn.innerHTML = document.documentElement.lang.toUpperCase();
+      document.querySelector("#hello").innerHTML =
+        document.documentElement.lang === "en"
+          ? "Hello World! 🌍"
+          : "Salut le monde! 🌍";
+    }
+
+    function switchTheme() {
+      const theme = document.documentElement.getAttribute("class");
+      document.documentElement.setAttribute(
+        "class",
+        theme === "light" ? "dark" : "light"
+      );
+      console.log(document.documentElement.getAttribute("class"));
+    }
+  </script>
+
+  <body
+    class="bg-gradient-to-r from-fuchsia-300 to bg-yellow-300 dark:from-slate-900 dark:to-slate-700"
+  >
+    <nav
+      class="border-emerald-700 border-2 shadow-lg shadow-emerald-300 rounded-b-full p-8 fixed top-0 w-full bg-slate-900 flex justify-evenly items-center animate-fade-down"
+    >
+      <button class="btn" id="switchLangBtn" onclick="switchLang">
+        switch lang
+      </button>
+      <button class="btn" id="switchThemeBtn" onclick="switchTheme">
+        swith light
+      </button>
+      <a
+        class="btn block animate-pulse hover:animate-none"
+        id="dl-resume"
+        href=""
+        >download resume</a
+      >
+    </nav>
+    <main class="m-44">
+      <header>
+        <h1 id="hello">Hello World!</h1>
+        <hr />
+        <div>
+          <p id="disclaimer">
+            Je suis developpeur Web, et m'interesse à trop de trucs.
+            <br />
+            I'm a webdev, give me coffee please.
+          </p>
+          <div>
+            <h4>✉️ mail me :)</h4>
+            <a>
+              <img
+                id="avatarheader"
+                src="https://github.com/ThibaultMariePro/assets/blob/main/EmnotAvatar.png?raw=true"
+                alt="avatar de TIBO"
+                title="✉️ thibault.marie.pro@gmail.com"
+              />
+            </a>
+          </div>
+          <div>
+            <h6>🔗</h6>
+            <a href="https://github.com/ThibaultMariePro/">my_github</a>
+            <hr />
+            <a
+              download
+              href="https://github.com/ThibaultMariePro/cv/raw/main/pdf/CV310123.pdf"
+            >
+              <button>my_resume</button>
+            </a>
+          </div>
+        </div>
+      </header>
+
       <hr />
-      <div class="is-flex aicenter jceven bg-gradient-to-r from-fuchsia-500 to-cyan-500">
-        <p id="disclaimer">
-          Je suis developpeur Web, et m'interesse à trop de trucs. I'm a webdev,
-          give me coffee please.
-        </p>
-        <div class="is-flex flex-col">
-          <h4 class="is-centered">✉️ mail me :)</h4>
-          <a href="mailto:thibault.marie.pro@gmail.com" class="is-button">
-            <img
-              id="avatarheader"
-              src="https://github.com/ThibaultMariePro/assets/blob/main/EmnotAvatar.png?raw=true"
-              alt="avatar de TIBO"
-              title="✉️ thibault.marie.pro@gmail.com"
-            />
-          </a>
+      <section id="interests">
+        <h2>Trucs que je trouve importants</h2>
+        <div>
+          <ul>
+            <li>
+              <h3>La rhéologie des chats</h3>
+              🔗<a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://theconversation.com/answering-the-question-that-won-me-the-ig-nobel-prize-are-cats-liquid-86589"
+              >
+                Article
+              </a>
+              <a
+                href="https://www.drgoulu.com/wp-content/uploads/2017/09/Rheology-of-cats.pdf"
+                download
+              >
+                <button>PDF</button>
+              </a>
+            </li>
+
+            <li>
+              <h3>
+                Rapport du Shift Project sur le déploiement de la sobriété
+                numérique en France
+              </h3>
+              🔗<a
+                href="https://theshiftproject.org/article/pour-une-sobriete-numerique-rapport-shift/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Article
+              </a>
+              <a
+                target="_blank"
+                href="https://theshiftproject.org/wp-content/uploads/2020/10/Deployer-la-sobriete-numerique_Rapport-complet_ShiftProject.pdf"
+                download
+              >
+                <button>PDF</button>
+              </a>
+            </li>
+
+            <li>
+              <h3>
+                Un standard pour la transmission des paquets IP sur pigeons
+                voyageurs
+              </h3>
+              🔗<a
+                href="https://rfc1149.net/rfc1149.html"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Article
+              </a>
+              <a
+                target="_blank"
+                href="https://www.rfc-editor.org/rfc/pdfrfc/rfc2549.txt.pdf"
+                download
+              >
+                <button>PDF</button>
+              </a>
+            </li>
+          </ul>
         </div>
-        <div class="is-centered">
-          <h6>🔗</h6>
-          <a href="https://github.com/ThibaultMariePro/">my_github</a>
-          <hr />
-          <a
-            download
-            href="https://github.com/ThibaultMariePro/cv/raw/main/pdf/CV310123.pdf"
-          >
-            <button class="is-button">my_resume</button>
-          </a>
-        </div>
-      </div>
-    </header>
-
-    <hr />
-    <section id="interests">
-      <h2>Trucs que je trouve importants</h2>
-      <div>
-        <ul>
-          <li>
-            <h3>La rhéologie des chats</h3>
-            🔗<a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://theconversation.com/answering-the-question-that-won-me-the-ig-nobel-prize-are-cats-liquid-86589"
-            >
-              Article
-            </a>
-            <a
-              href="https://www.drgoulu.com/wp-content/uploads/2017/09/Rheology-of-cats.pdf"
-              download
-            >
-              <button class="is-button">PDF</button>
-            </a>
-          </li>
-
-          <li>
-            <h3>
-              Rapport du Shift Project sur le déploiement de la sobriété
-              numérique en France
-            </h3>
-            🔗<a
-              href="https://theshiftproject.org/article/pour-une-sobriete-numerique-rapport-shift/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Article
-            </a>
-            <a
-              target="_blank"
-              href="https://theshiftproject.org/wp-content/uploads/2020/10/Deployer-la-sobriete-numerique_Rapport-complet_ShiftProject.pdf"
-              download
-            >
-              <button class="is-button">PDF</button>
-            </a>
-          </li>
-
-          <li>
-            <h3>
-              Un standard pour la transmission des paquets IP sur pigeons
-              voyageurs
-            </h3>
-            🔗<a
-              href="https://rfc1149.net/rfc1149.html"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Article
-            </a>
-            <a
-              target="_blank"
-              href="https://www.rfc-editor.org/rfc/pdfrfc/rfc2549.txt.pdf"
-              download
-            >
-              <button class="is-button">PDF</button>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </section>
-    <hr />
+      </section>
+      <hr />
+    </main>
   </body>
 </html>
