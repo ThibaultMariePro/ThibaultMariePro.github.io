@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -12,14 +12,24 @@
     <title>💻 TIBO</title>
   </head>
 
-  <noscript>YOU HAVE TO ENABLE JAVASCRIPT TO FULLY ENJOY THIS WEBPAGE</noscript>
+  <noscript>You must enable Javascript to fully enjoy this website</noscript>
 
   <script>
+    const dark = {
+      label: "dark",
+      symbol: "dark_mode",
+    };
+    const light = {
+      label: "light",
+      symbol: "light_mode",
+    };
+
     const fr = {
       lang: "fr",
       switchLangBtn: "🇫🇷 FR",
       hello: "🌍 Salut le monde!",
       job: "Développeur Web Fullstack | Concepteur Développeur d'Applications",
+      whoami: "Je suis un webdev très original : accro au café.",
       catchphrase: "Je suis un webdev très original accro au café.",
       mailme: "✉️ envoyez moi un mail :)",
       stuff: "Trucs que je trouve importants",
@@ -30,6 +40,7 @@
       switchLangBtn: "🇬🇧 EN",
       hello: "🌍 Hello World!",
       job: "Fullstack Web Developer | Software Designer",
+      whoami: "'m a very original webdev: addicted to coffee.",
       catchphrase: "I'm a very original webdev addicted to coffee.",
       mailme: "✉️ mail me :)",
       stuff: "Stuff I find important",
@@ -39,17 +50,18 @@
     onload = () => {
       // --- i18n setting --- //
       document.documentElement.lang == "en" ? (i18n = en) : (i18n = fr);
-      console.log("INIT i18n :" + i18n.lang);
-      console.log("INIT lang :" + document.documentElement.lang);
-
-      // Hello world
+      // -- theme setting -- //
+      document.documentElement.classList.contains("dark")
+        ? (theme = dark)
+        : (theme = light);
+      document.documentElement.classList = theme.label;
+      // -- content setting -- //
+      // hello world //
       document.querySelector("#hello").innerHTML = i18n.hello;
+      // whoami //
+      document.querySelector("#whoami").innerHTML = i18n.whoami;
 
       // --- Listeners setting --- //
-
-      const switchThemeBtn = document
-        .querySelector("#switchThemeBtn")
-        .addEventListener("click", switchTheme);
 
       const catchphrase = (document.querySelector("#catchphrase").innerHTML =
         i18n.catchphrase);
@@ -57,56 +69,61 @@
       const stuff = (document.querySelector("#stuff").innerHTML = i18n.stuff);
     };
 
+    function switchTheme() {
+      theme.label == "dark" ? (theme = light) : (theme = dark);
+      document.documentElement.classList = theme.label;
+      document.querySelector("#switchThemeBtn span").innerHTML = theme.symbol;
+      console.warn("theme :" + document.documentElement.classList);
+    }
+
     function switchLang(component) {
       i18n.lang == "en" ? (i18n = fr) : (i18n = en);
       document.documentElement.lang = i18n.lang;
-      console.warn(
-        "document.documentElement.lang :" + document.documentElement.lang
-      );
       i18ncomponents = document.querySelectorAll(".i18n");
       i18ncomponents.forEach((element) => {
         element.innerHTML = i18n[element.id];
       });
+      console.warn("lang :" + document.documentElement.lang);
     }
   </script>
 
   <body
-    class="bg-gradient-to-r from-fuchsia-300 to-yellow-300 dark:from-slate-900 dark:to-slate-700 h-screen w-screen overflow-hidden"
+    class="w-screen h-screen bg-gradient-to-r from-fuchsia-300 to-cyan-200 dark:from-slate-900 dark:to-slate-700"
   >
     <div
-      class="absolute top-0 bg-gradient-to-t from-orange-500 to-indigo-800 text-transparent bg-clip-text -z-10 overflow-hidden h-screen w-screen"
+      class="fixed h-screen w-screen top-0 -z-10 bg-gradient-to-t from-hlorange to-portalblue text-transparent bg-clip-text"
     >
       <p
         id="blackmesa"
-        class="uppercase font-bold text-xl text-justify select-none"
+        class="resize-none uppercase font-bold text-xl text-justify select-none"
       >
-        he title "Half-Life" fades into a first person perspective of the inside
-        of an automated train. Words appear on screen: "Black Mesa Research
-        Facility: Black Mesa, New Mexico". A recorded message begins to play on
-        the loudspeaker. Announcer: "Good morning, and welcome to the Black Mesa
-        transit system. This automated train is provided for the security and
-        convenience of the Black Mesa Research Facility personnel. The time is
-        8:47 A.M. Current topside temperature is 93 degrees with an estimated
-        high of 105. The Black Mesa compound is maintained at a pleasant 68
-        degrees at all times. This train is inbound from level 3 dormitories to
-        sector C test labs and control facilities. If your intended destination
-        is a high security area beyond sector C, you will need to return to the
-        central transit hub in area 9 and board a high security train. If you
-        have not yet submitted your identity to the retinal clearance system,
-        you must report to Black Mesa personnel for processing before you will
-        be permitted into the high security branch of the transit system. "Due
-        to the high toxicity of material routinely handled in the Black Mesa
-        compound, no smoking, eating, or drinking are permitted within the Black
-        Mesa transit system. Please keep your limbs inside the train at all
-        times. Do not attempt to open the doors until the train has come to a
-        complete halt at the station platform. In the event of an emergency,
-        passengers are to remain seated and await further instruction. If it is
-        necessary to exit the train, disabled personnel should be evacuated
-        first. Please, stay away from electrified rails and proceed to an
-        emergency station until assistance arrives. " Words appear on the screen
-        as the announcer continues: SUBJECT: Gordon Freeman Male, Age 27
-        EDUCATION: Ph.D., MIT, Theoretical Physics POSITION: Research Associate
-        ASSIGNMENT: Anomalous Materials Laboratory CLEARANCE: Level 3
+        The title "Half-Life" fades into a first person perspective of the
+        inside of an automated train. Words appear on screen: "Black Mesa
+        Research Facility: Black Mesa, New Mexico". A recorded message begins to
+        play on the loudspeaker. Announcer: "Good morning, and welcome to the
+        Black Mesa transit system. This automated train is provided for the
+        security and convenience of the Black Mesa Research Facility personnel.
+        The time is 8:47 A.M. Current topside temperature is 93 degrees with an
+        estimated high of 105. The Black Mesa compound is maintained at a
+        pleasant 68 degrees at all times. This train is inbound from level 3
+        dormitories to sector C test labs and control facilities. If your
+        intended destination is a high security area beyond sector C, you will
+        need to return to the central transit hub in area 9 and board a high
+        security train. If you have not yet submitted your identity to the
+        retinal clearance system, you must report to Black Mesa personnel for
+        processing before you will be permitted into the high security branch of
+        the transit system. "Due to the high toxicity of material routinely
+        handled in the Black Mesa compound, no smoking, eating, or drinking are
+        permitted within the Black Mesa transit system. Please keep your limbs
+        inside the train at all times. Do not attempt to open the doors until
+        the train has come to a complete halt at the station platform. In the
+        event of an emergency, passengers are to remain seated and await further
+        instruction. If it is necessary to exit the train, disabled personnel
+        should be evacuated first. Please, stay away from electrified rails and
+        proceed to an emergency station until assistance arrives. " Words appear
+        on the screen as the announcer continues: SUBJECT: Gordon Freeman Male,
+        Age 27 EDUCATION: Ph.D., MIT, Theoretical Physics POSITION: Research
+        Associate ASSIGNMENT: Anomalous Materials Laboratory CLEARANCE: Level 3
         ADMINISTRATIVE SPONSOR: Classified DISASTER RESPONSE PRIORITY:
         Discretionary Announcer: "A reminder: that the Black Mesa Hazard Course
         decathalon will commence this evening at 1900 hours in the Level 3
@@ -472,26 +489,48 @@
     </div>
 
     <nav
-      class="border-emerald-700 border-2 shadow-lg shadow-emerald-300 rounded-b-full p-4 fixed top-0 w-full bg-slate-900 flex justify-evenly items-center z-10"
+      class="dark:border-cyan-400 dark:shadow-cyan-300 dark:from-portalblue dark:backdrop-filter dark:backdrop-blur bg-gradient-to-tr from-hlorange to-orange-600 border-b-hlorange border-x-hlorange border-2 shadow-lg shadow-hlorange/50 rounded-b-full p-2 fixed top-0 w-full flex justify-evenly items-center z-10"
     >
-      <button class="i18n btn glass" id="switchLangBtn" onclick="switchLang(this)">
-        LANG
+      <button class="i18n btn" id="switchLangBtn" onclick="switchLang(this)">
+        🇬🇧 / 🇫🇷
       </button>
 
-      <button class="btn glass" id="switchThemeBtn" onclick="switchTheme">
-        THEME
+      <button
+        class="btn "
+        id="switchThemeBtn"
+        onclick="switchTheme()"
+      >
+        <span class="material-symbols-outlined mx-1">
+          dark_modepen_size_1light_mode
+        </span>
       </button>
+
       <a
-        class="btn block animate-pulse hover:animate-none glass"
+        class="btn block"
         id="dl-resume"
-        href=""
+        href="./ThibaultMarieCV160324.pdf"
+        download
       >
         <span class="material-symbols-outlined block"> download </span>
       </a>
+
+      <a
+        class="btn block"
+        id="githublink"
+        href="https://github.com/ThibaultMariePro"
+      >
+      <img src="./github-mark-white.svg" alt="github" class="object-cover h-6 w-auto" />
+      </a>
     </nav>
+
     <main class="m-44">
-      <header class="border-emerald-900 border-2 m-12 p-8 rounded-xl glass">
-        <h1 id="hello" class="text-center">🌍</h1>
+      <header class="m-12 p-8 rounded-xl glass dark:backdrop-filter dark:backdrop-brightness-200 dark:backdrop-contrast-200 dark:backdrop-blur  ">
+        <h1
+          id="hello"
+          class="i18n text-center font-bold text-xl bg-hlorange color-accent1"
+        >
+          🌍
+        </h1>
         <hr />
         <div>
           <p class="i18n" id="catchphrase"></p>

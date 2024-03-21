@@ -5,12 +5,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        accent: {
-          1: "hsl(var(--color-accent1) / <alpha-value>)",
-          2: "hsl(var(--color-accent2) / <alpha-value>)",
-        },
+        hlorange: "hsl(var(--color-hlorange) / <alpha-value>)",
+        portalblue: "hsl(var(--color-portalblue) / <alpha-value>)",
         bg:"hsl(var(--color-bg) / <alpha-value>)",
         content:"hsl(var(--color-content) / <alpha-value>)",
+        light:"hsl(var(--color-light) / <alpha-value>)",
+        dark:"hsl(var(--color-dark) / <alpha-value>)",
       },
     },
   },

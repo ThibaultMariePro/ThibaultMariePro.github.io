@@ -2,17 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
-  :root{
+@layer base {
+  :root {
     font-family: Noto Sans, sans-serif;
+
+    --color-hlorange: 28deg 97% 53%;
+    --color-portalblue: 202deg 100% 50%;
+
+    --color-light: 0deg 0% 100%;
+    --color-dark: 0deg 0% 0%;
   }
 }
 
+html {
+  height: 100vh;
+  width: 100vw;
+}
+
 .btn {
-  @apply py-2 px-4 rounded-lg shadow shadow-emerald-300 bg-gradient-to-tr from-slate-500 to-slate-800 text-white font-bold;
+  @apply h-8 w-auto flex items-center transition px-4 rounded-full shadow shadow-slate-800 bg-gradient-to-tr from-hlorange to-orange-700 text-white text-lg font-bold;
 
   &:hover {
-    @apply bg-gradient-to-r from-red-500 to-orange-500 shadow-black;
+    @apply scale-105 bg-gradient-to-tr from-orange-700 to-orange-800 shadow-slate-700 shadow-md transition [text-shadow:_1px_1px_0_rgb(0_0_0_/_40%)] ;
+  }
+  &:active{
+    @apply scale-100 bg-gradient-to-t from-hlorange to-hlorange shadow-slate-950 shadow-sm;
   }
 }
 
@@ -22,6 +36,5 @@
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.5);
 }
-
