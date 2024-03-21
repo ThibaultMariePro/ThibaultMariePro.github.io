@@ -2,11 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base{
+  :root{
+    font-family: Noto Sans, sans-serif;
+  }
+}
 
 .btn {
-  @apply py-2 px-4 rounded-full shadow shadow-emerald-300 bg-gradient-to-tr from-slate-500 to-slate-800 text-white font-bold;
+  @apply py-2 px-4 rounded-lg shadow shadow-emerald-300 bg-gradient-to-tr from-slate-500 to-slate-800 text-white font-bold;
 
   &:hover {
     @apply bg-gradient-to-r from-red-500 to-orange-500 shadow-black;
   }
 }
+
+.glass {
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
