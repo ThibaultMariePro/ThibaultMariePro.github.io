@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -91,6 +91,11 @@
   <body
     class="w-screen h-screen bg-gradient-to-r from-fuchsia-300 to-cyan-200 dark:from-slate-900 dark:to-slate-700"
   >
+  <div class="p-4 animate-pulse flex flex-col items-center z-20 fixed top-8 right-12 blur-xl hover:blur-0 hover:scale-150 hover:animate-none transition">
+    <img class="h-20" src="./underConstructionWarningSign.png" alt="site under construction">
+    <h2 class="text-center font-bold bg-black p-1 text-yellow-500" >Website under construction</h2>
+  </div>
+
     <div
       class="fixed h-screen w-screen top-0 -z-10 bg-gradient-to-t from-hlorange to-portalblue text-transparent bg-clip-text"
     >
@@ -490,9 +495,9 @@
     </div>
 
     <nav
-      class="dark:border-cyan-400/50 dark:shadow-cyan-300/50 dark:from-portalblue/50 dark:to-portalblue/30 backdrop-filter backdrop-blur bg-gradient-to-tr from-hlorange/50 to-orange-500/30 border-b-hlorange border-x-hlorange border-2 shadow shadow-hlorange/50 rounded-b-full p-2 fixed top-0 w-full flex justify-evenly items-center z-10"
+      class="dark:border-cyan-400/50 dark:shadow-cyan-300/50 dark:from-portalblue/50 dark:to-portalblue/30 backdrop-filter backdrop-blur bg-gradient-to-tr from-hlorange/50 to-orange-500/30 border-b-hlorange border-x-hlorange border-2 shadow shadow-hlorange/50 rounded-b-full p-2 fixed top-0 w-full flex justify-evenly items-center z-10 group"
     >
-      <button class="i18n btn" id="switchLangBtn" onclick="switchLang(this)">
+      <button class="i18n btn " id="switchLangBtn" onclick="switchLang(this)">
         🇬🇧 / 🇫🇷
       </button>
 
