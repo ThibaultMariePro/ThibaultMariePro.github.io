@@ -37,7 +37,30 @@ html {
   -webkit-backdrop-filter: blur(6px);
 }
 
-.glass-border{
-  @apply border border-white border-opacity-50;
+.term-locator{
+  @apply font-bold text-hlorange bg-slate-700 px-1;
 }
-  
+
+.term-txt {
+  @apply text-emerald-400 bg-slate-700;
+}
+
+.term_cursor{
+  @apply font-bold animate-duration-300 animate-pulse text-emerald-400 bg-slate-700
+}
+
+.blink{
+  animation: blink-animation 0.3s steps(5, start) infinite;
+  -webkit-animation: blink-animation 0.3s steps(5, start) infinite;
+}
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
