@@ -595,7 +595,9 @@
           <h4 class="i18n" id="mailme"></h4>
 
           <div>
-            <div class="text-rose-600 font-bold flex flex-col relative bg-gradient-to-tr from-slate-500/50 to bg-slate-200/50 rounded p-8">
+            <div
+              class="text-rose-600 font-bold flex flex-col relative bg-gradient-to-tr from-slate-500/50 to bg-slate-200/50 rounded p-8"
+            >
               <img
                 class="w-2/5 absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-10"
                 id="avatarheader"
@@ -687,146 +689,108 @@
       <section id="interests" class="glass m-2 p-8">
         <h2 class="i18n" id="stuff"></h2>
         <div>
-          <ul>
-            <li>
-              <h3>La rhéologie des chats</h3>
-              🔗<a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://theconversation.com/answering-the-question-that-won-me-the-ig-nobel-prize-are-cats-liquid-86589"
-              >
-                Article
-              </a>
-              <a
-                href="https://www.drgoulu.com/wp-content/uploads/2017/09/Rheology-of-cats.pdf"
-                download
-              >
-                <button>PDF</button>
-              </a>
-            </li>
-
-            <li>
-              <h3>
-                Rapport du Shift Project sur le déploiement de la sobriété
-                numérique en France
-              </h3>
-              🔗<a
-                href="https://theshiftproject.org/article/pour-une-sobriete-numerique-rapport-shift/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Article
-              </a>
-              <a
-                target="_blank"
-                href="https://theshiftproject.org/wp-content/uploads/2020/10/Deployer-la-sobriete-numerique_Rapport-complet_ShiftProject.pdf"
-                download
-              >
-                <button>PDF</button>
-              </a>
-            </li>
-
-            <li>
-              <h3>
-                Un standard pour la transmission des paquets IP sur pigeons
-                voyageurs
-              </h3>
-              🔗<a
-                href="https://rfc1149.net/rfc1149.html"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Article
-              </a>
-              <a
-                target="_blank"
-                href="https://www.rfc-editor.org/rfc/pdfrfc/rfc2549.txt.pdf"
-                download
-              >
-                <button>PDF</button>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section id="interests" class="glass m-2 p-8">
-        <h2 class="i18n" id="stuff"></h2>
-        <div>
-          <table>
-            <tr>
-              <th>Title</th>
-              <th>Link</th>
-              <th>PDF</th>
-            </tr>
-            <tr>
-              <td>La rhéologie des chats</td>
-              <td>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://theconversation.com/answering-the-question-that-won-me-the-ig-nobel-prize-are-cats-liquid-86589"
-                >
-                  Article
-                </a>
-              </td>
-              <td>
-                <a
-                  href="https://www.drgoulu.com/wp-content/uploads/2017/09/Rheology-of-cats.pdf"
-                  download
-                >
-                  PDF
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Rapport du Shift Project sur le déploiement de la sobriété
-                numérique en France
-              </td>
-              <td>
-                <a
-                  href="https://theshiftproject.org/article/pour-une-sobriete-numerique-rapport-shift/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Article
-                </a>
-              </td>
-              <td>
-                <a
-                  target="_blank"
-                  href="https://theshiftproject.org/wp-content/uploads/2020/10/Deployer-la-sobriete-numerique_Rapport-complet_ShiftProject.pdf"
-                  download
-                >
-                  PDF
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Un standard pour la transmission des paquets IP sur pigeons
-                voyageurs
-              </td>
-              <td>
-                <a
-                  href="https://rfc1149.net/rfc1149.html"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Article
-                </a>
-              </td>
-              <td>
-                <a
-                  target="_blank"
-                  href="https://www.rfc-editor.org/rfc/pdfrfc/rfc2549.txt.pdf"
-                  download
-                >
-                  PDF
-                </a>
-              </td>
-            </tr>
+          <table class="border-spacing-2 w-full *:border">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Link</th>
+                <th>PDF</th>
+              </tr>
+            </thead>
+            <tbody class="*:bg-gradient-to-r *:from-transparent *:to-hlorange">
+              <tr class="hover:from-portalblue hover:to-indigo-400 shadow-md">
+                <td class="text-center font-bold hover:text-white">La rhéologie des chats</td>
+                <td>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://theconversation.com/answering-the-question-that-won-me-the-ig-nobel-prize-are-cats-liquid-86589"
+                  >
+                    <span
+                      class="text-center flex items-center justify-center m-4 material-symbols-outlined rounded-full bg-slate-300 p-2 shadow hover:shadow-lg hover:bg-slate-500 transition scale-95 hover:scale-100 hover:text-cyan-300 font-bold"
+                    >
+                      link
+                    </span>
+                  </a>
+                </td>
+                <td>
+                  <a
+                    href="https://www.drgoulu.com/wp-content/uploads/2017/09/Rheology-of-cats.pdf"
+                    download
+                  >
+                    <span
+                      class="text-center flex items-center justify-center m-4 material-symbols-outlined rounded-full bg-slate-300 p-2 shadow hover:shadow-lg hover:bg-slate-500 transition scale-95 hover:scale-100 hover:text-cyan-300 font-bold"
+                    >
+                      download
+                    </span>
+                  </a>
+                </td>
+              </tr>
+              <tr class="hover:from-portalblue hover:to-indigo-400 shadow-md">
+                <td class="text-center font-bold hover:text-white">
+                  Rapport du Shift Project sur le déploiement de la sobriété
+                  numérique en France
+                </td>
+                <td>
+                  <a
+                    href="https://theshiftproject.org/article/pour-une-sobriete-numerique-rapport-shift/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span
+                      class="text-center flex items-center justify-center m-4 material-symbols-outlined rounded-full bg-slate-300 p-2 shadow hover:shadow-lg hover:bg-slate-500 transition scale-95 hover:scale-100 hover:text-cyan-300 font-bold"
+                    >
+                      link
+                    </span>
+                  </a>
+                </td>
+                <td>
+                  <a
+                    target="_blank"
+                    href="https://theshiftproject.org/wp-content/uploads/2020/10/Deployer-la-sobriete-numerique_Rapport-complet_ShiftProject.pdf"
+                    download
+                  >
+                    <span
+                      class="text-center flex items-center justify-center m-4 material-symbols-outlined rounded-full bg-slate-300 p-2 shadow hover:shadow-lg hover:bg-slate-500 transition scale-95 hover:scale-100 hover:text-cyan-300 font-bold"
+                    >
+                      download
+                    </span>
+                  </a>
+                </td>
+              </tr>
+              <tr class="hover:from-portalblue hover:to-indigo-400 shadow-md">
+                <td class="text-center font-bold hover:text-white">
+                  Un standard pour la transmission des paquets IP sur pigeons
+                  voyageurs
+                </td>
+                <td>
+                  <a
+                    href="https://rfc1149.net/rfc1149.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span
+                      class="text-center flex items-center justify-center m-4 material-symbols-outlined rounded-full bg-slate-300 p-2 shadow hover:shadow-lg hover:bg-slate-500 transition scale-95 hover:scale-100 hover:text-cyan-300 font-bold"
+                    >
+                      link
+                    </span>
+                  </a>
+                </td>
+                <td>
+                  <a
+                    target="_blank"
+                    href="https://www.rfc-editor.org/rfc/pdfrfc/rfc2549.txt.pdf"
+                    download
+                  >
+                    <span
+                      class="text-center flex items-center justify-center m-4 material-symbols-outlined rounded-full bg-slate-300 p-2 shadow hover:shadow-lg hover:bg-slate-500 transition scale-95 hover:scale-100 hover:text-cyan-300 font-bold"
+                    >
+                      download
+                    </span>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
           </table>
         </div>
       </section>
