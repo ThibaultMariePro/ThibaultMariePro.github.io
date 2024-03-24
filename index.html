@@ -30,8 +30,8 @@
       hello: "Salut le monde!",
       job: "Développeur Web Fullstack | Concepteur Développeur d'Applications",
       whoami: "Je suis un webdev très original, accro au café.",
-      catchphrase:
-        "Vous savez, moi je ne crois pas qu’il y ait de bonne ou de mauvaise tech. Moi, si je devais résumer ma folie_des_internets aujourd’hui avec vous, je dirais que c’est d’abord des rencontres. Des gens qui m’ont tendu la main, peut-être à un moment où je ne pouvais pas, où j’étais seul chez moi. Et c’est assez curieux de se dire que les hasards, les rencontres forgent une carrière_dans_cette_folle_époque_du_digital_(je_déteste_quand_on_dit_digital_là_où_il_faudrait_dire_numérique)... Parce que quand on a le goût de la chose, quand on a le goût de la chose bien faite, le beau geste, parfois on ne trouve pas l’interlocuteur en face je dirais, le débugueur qui vous aide à avancer. Alors ça n’est pas mon cas, comme je disais là, puisque moi au contraire, j’ai pu ; et je dis merci à la folie_des_internets, je lui dis merci, je chante la folie_des_internets, je danse la folie_des_internets... je ne suis qu’amour ! Et finalement, quand des gens me disent « Mais comment fais-tu pour avoir cette passion_propre_à_ton_époque ? », je leur réponds très simplement que c’est ce goût de l’amour, ce goût donc qui m’a poussé aujourd’hui à entreprendre une ascension ambitieuse... mais demain qui sait ? Peut-être simplement à me mettre au service de la communauté, à faire le don, le don de soi.",
+      consolecatchphrase:
+        "Vous savez, moi je ne crois pas qu’il y ait de bonne ou de mauvaise tech. Moi, si je devais résumer ma folie des internets aujourd’hui avec vous, je dirais que c’est d’abord des rencontres. Des gens qui m’ont tendu la main, peut-être à un moment où je ne pouvais pas, où j’étais seul chez moi. Et c’est assez curieux de se dire que les hasards, les rencontres forgent une carrière dans cette folle époque du digital (je déteste quand on dit digital là où il faudrait dire numérique)... Parce que quand on a le goût de la chose, quand on a le goût de la chose bien faite, le beau geste, parfois on ne trouve pas l’interlocuteur en face je dirais, le débugueur qui vous aide à avancer. Alors ça n’est pas mon cas, comme je disais là, puisque moi au contraire, j’ai pu ; et je dis merci à la folie des internets, je lui dis merci, je chante la folie des internets, je danse la folie des internets... je ne suis qu’amour ! Et finalement, quand des gens me disent « Mais comment fais-tu pour avoir cette passion propre à ton époque ? », je leur réponds très simplement que c’est ce goût de l’amour, ce goût donc qui m’a poussé aujourd’hui à entreprendre une ascension ambitieuse... mais demain qui sait ? Peut-être simplement à me mettre au service de la communauté, à faire le don, le don de soi.",
       mailme: "✉️ envoyez moi un mail :)",
       stuff: "Trucs que je trouve importants",
     };
@@ -42,7 +42,7 @@
       hello: "Hello World!",
       job: "Fullstack Web Developer | Software Designer",
       whoami: "I'm a very original webdev, addicted to coffee.",
-      catchphrase:
+      consolecatchphrase:
         "You know, I don't think there's such a thing as good tech or bad tech. If I had to sum up my Internet_mania with you today, I'd say it's all about meeting people. People who reached out to me, perhaps at a time when I couldn't, when I was home alone. And it's quite strange to think that serendipity and encounters forge a career in this crazy digital age (I hate it when we say digital when we should say digital).... Because when you've got a taste for things, when you've got a taste for things well done, for beautiful gestures, sometimes you just can't find the right person to talk to, I'd say, the debugger who can help you move forward. So that's not my case, as I was saying, because on the contrary, I've been able to; and I say thank you to Internet_madness, I say thank you to it, I sing Internet_madness, I dance Internet_madness... I'm all about love! And finally, when people say to me \"But how did you manage to have this passion_of_your_own_time?\", I answer them very simply that it's this taste for love, this taste that has driven me today to undertake an ambitious climb... but tomorrow, who knows? Perhaps simply to put myself at the service of the community, to make the gift, the gift of self.",
       mailme: "✉️ mail me :)",
       stuff: "Stuff I find important",
@@ -64,56 +64,59 @@
       document.querySelector("#hello").innerHTML = i18n.hello;
       // whoami //
       document.querySelector("#whoami").innerHTML = i18n.whoami;
-      // catchprase //
-      document.querySelector("#catchphrase").innerHTML = i18n.catchphrase;
-
       // const //
-      const consoleCatchphrase = document.querySelector("#console-catchphrase");
+      const consoleCatchphrase = document.querySelector("#consolecatchphrase");
 
       // Event Listeners //
       document.querySelector("#switchLangBtn").addEventListener("click", () => {
         switchLang();
       });
-      document.querySelector("#switchThemeBtn").addEventListener("click", () => {
-        switchTheme();
-      });
+      document
+        .querySelector("#switchThemeBtn")
+        .addEventListener("click", () => {
+          switchTheme();
+        });
 
       // const catchphrase = (document.querySelector("#catchphrase").innerHTML =
       //   i18n.catchphrase);
 
       // ---------  THINGS TOR RUN --------- //
       // typewriter effect  //
-    typewriter(consoleCatchphrase, fr.catchphrase, 50);
+      typewriter(consoleCatchphrase, i18n.consolecatchphrase, 50);
 
-    function switchTheme() {
-      theme.label == "dark" ? (theme = light) : (theme = dark);
-      document.documentElement.classList = theme.label;
-      document.querySelector("#switchThemeBtn span").innerHTML = theme.symbol;
-      console.warn("theme :" + document.documentElement.classList);
-    }
+      function switchTheme() {
+        theme.label == "dark" ? (theme = light) : (theme = dark);
+        document.documentElement.classList = theme.label;
+        document.querySelector("#switchThemeBtn span").innerHTML = theme.symbol;
+        console.warn("theme :" + document.documentElement.classList);
+      }
 
-    function switchLang(component) {
-      i18n.lang == "en" ? (i18n = fr) : (i18n = en);
-      document.documentElement.lang = i18n.lang;
-      i18ncomponents = document.querySelectorAll(".i18n");
-      i18ncomponents.forEach((element) => {
-        element.innerHTML = i18n[element.id];
-      });
-      console.warn("lang :" + document.documentElement.lang);
-    }
+      function switchLang(component) {
+        i18n.lang == "en" ? (i18n = fr) : (i18n = en);
+        document.documentElement.lang = i18n.lang;
+        i18ncomponents = document.querySelectorAll(".i18n");
+        i18ncomponents.forEach((element) => {
+          element.innerHTML = i18n[element.id];
+        });
+        console.warn("lang :" + document.documentElement.lang);
+      }
 
-    function typewriter(target, txt, speed) {
-      let i = 0;
-      let timer = setInterval(() => {
-        target.textContent += txt[i];
-        i++;
-        if (i === txt.length) {
-          clearInterval(timer);
-        }
-      }, speed);
-    }
-  };
+      function typewriter(target, txt, speed) {
+        let i = 0;
+        let cursor = document.createElement("span");
+        cursor.innerHTML = "&nbsp;";
+        cursor.classList.add("cursor");
 
+        let timer = setInterval(() => {
+          target.textContent += txt[i];
+          i++;
+          if (i === txt.length) {
+            clearInterval(timer);
+            target.appendChild(cursor);
+          }
+        }, speed);
+      }
+    };
   </script>
 
   <body
@@ -533,9 +536,7 @@
     <nav
       class="dark:border-cyan-400/50 dark:shadow-cyan-300/50 dark:from-portalblue/50 dark:to-portalblue/30 backdrop-filter backdrop-blur bg-gradient-to-tr from-hlorange/50 to-orange-500/30 border-b-hlorange border-x-hlorange border-2 shadow shadow-hlorange/50 rounded-b-full p-2 fixed top-0 w-full flex justify-evenly items-center z-10 group"
     >
-      <button class="i18n btn" id="switchLangBtn">
-        🇬🇧 / 🇫🇷
-      </button>
+      <button class="i18n btn" id="switchLangBtn">🇬🇧 / 🇫🇷</button>
 
       <button class="btn" id="switchThemeBtn">
         <span class="material-symbols-outlined mx-1">
@@ -577,48 +578,97 @@
         </div>
         <hr />
         <div>
-          <div class="flex items-center m-2 p-2 bg-slate-700">
+          <div
+            id="terminal-whoami"
+            class="flex items-center m-2 p-2 bg-slate-700"
+          >
             <span
               class="material-symbols-outlined animate-bounce text-hlorange"
             >
               local_cafe
             </span>
-            <p class="font-bold term-locator">[tibo@blackmesa ~]$</p>
+            <p class="font-bold term-locator firafont">[tibo@blackmesa ~]$</p>
             <p class="i18n term-txt" id="whoami"></p>
-            <p class="term_cursor">▐</p>
+            <span class="term-cursor">&nbsp;</span>
           </div>
+
+          <h4 class="i18n" id="mailme"></h4>
+
           <div>
-            <h4 class="i18n" id="mailme"></h4>
-            <img
-              class="w-2/5 m-auto"
-              id="avatarheader"
-              src="https://github.com/ThibaultMariePro/assets/blob/main/EmnotAvatar.png?raw=true"
-              alt="avatar de TIBO"
-              title="✉️ thibault.marie.pro@gmail.com"
-            />
-            <p id="catchphrase" class="i18n text-justify"></p>
-            <p id="console-catchphrase">></p>
+            <div class="text-rose-600 font-bold flex flex-col relative bg-gradient-to-tr from-slate-500/50 to bg-slate-200/50 rounded p-8">
+              <img
+                class="w-2/5 absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-10"
+                id="avatarheader"
+                src="https://github.com/ThibaultMariePro/assets/blob/main/EmnotAvatar.png?raw=true"
+                alt="avatar de TIBO"
+                title="✉️ thibault.marie.pro@gmail.com"
+              />
+              <p
+                class="inline-block p-2 font-bold language-bash animate-wiggle animate-delay-400 animate-infinite animate-duration-900 text-left"
+              >
+                BadMethodCallException
+              </p>
+              <p
+                class="animate-bounce animate-delay-700 animate-duration-700 text-right language-bash"
+              >
+                Uncaught RangeError
+              </p>
+              <p
+                class="animate-bounce animate-delay-400 animate-duration-500 text-center language-bash"
+              >
+                <br />
+                possible loss of precision
+              </p>
+              <p
+                class="animate-bounce animate-delay-300 animate-duration-700 language-bash"
+              >
+                undefined
+              </p>
+              <p
+                class="text-right animate-wiggle animate-infinite animate-delay-800 animate-duration-900 language-bash"
+              >
+                undefined
+              </p>
+
+              <p
+                class="animate-wiggle animate-delay-200 animate-duration-1000 language-bash text-center"
+              >
+                QueryException: SQLSTATE[42S22]: Column not found
+              </p>
+              <p
+                class="animate-bounce animate-delay-200 animate-duration-1000 language-bash"
+              >
+                NullPointerException
+              </p>
+              <p
+                class="animate-jump animate-delay-500 animate-duration-800 text-center language-bash"
+              >
+                TypeError: ‘undefined’ is not an object
+              </p>
+            </div>
           </div>
+        </div>
+
+        <div class="mt-12">
+          <p class="font-bold term-locator firafont">[tibo@blackmesa ~]$</p>
+
+          <div class="relative flex items-end bg-slate-700">
+            <p id="consolecatchphrase" class="i18n text-justify term-txt px-2">
+              >
+            </p>
+            <span
+              id="consolecatchphrase"
+              class="term-cursor mb-1 mr-2 left-0"
+            ></span>
+          </div>
+
           <pre>
             <code class="language-bash">
-              <span class="i18n" id="aboutme">
-                <span class="material-symbols-outlined"> info </span>
                 <!-- here is a exemple of a bash script to replace a string by an other and save the result in a file -->
+                <span class="material-symbols-outlined"> info </span>
                 sed -i 's/old_string/new_string/g' file.txt
-              </span>
             </code>
           </pre>
-
-          <style>
-            .language-bash {
-              font-size: 1.2rem;
-              font-family: "Fira Code", monospace;
-            }
-            .language-js {
-              font-size: 1.2rem;
-              font-family: "Fira Code", monospace;
-            }
-          </style>
 
           <div>
             <h6>🔗</h6>
@@ -634,7 +684,6 @@
         </div>
       </header>
       <hr />
-
       <section id="interests" class="glass m-2 p-8">
         <h2 class="i18n" id="stuff"></h2>
         <div>
@@ -700,6 +749,88 @@
           </ul>
         </div>
       </section>
+
+      <section id="interests" class="glass m-2 p-8">
+        <h2 class="i18n" id="stuff"></h2>
+        <div>
+          <table>
+            <tr>
+              <th>Title</th>
+              <th>Link</th>
+              <th>PDF</th>
+            </tr>
+            <tr>
+              <td>La rhéologie des chats</td>
+              <td>
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://theconversation.com/answering-the-question-that-won-me-the-ig-nobel-prize-are-cats-liquid-86589"
+                >
+                  Article
+                </a>
+              </td>
+              <td>
+                <a
+                  href="https://www.drgoulu.com/wp-content/uploads/2017/09/Rheology-of-cats.pdf"
+                  download
+                >
+                  PDF
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Rapport du Shift Project sur le déploiement de la sobriété
+                numérique en France
+              </td>
+              <td>
+                <a
+                  href="https://theshiftproject.org/article/pour-une-sobriete-numerique-rapport-shift/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Article
+                </a>
+              </td>
+              <td>
+                <a
+                  target="_blank"
+                  href="https://theshiftproject.org/wp-content/uploads/2020/10/Deployer-la-sobriete-numerique_Rapport-complet_ShiftProject.pdf"
+                  download
+                >
+                  PDF
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Un standard pour la transmission des paquets IP sur pigeons
+                voyageurs
+              </td>
+              <td>
+                <a
+                  href="https://rfc1149.net/rfc1149.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Article
+                </a>
+              </td>
+              <td>
+                <a
+                  target="_blank"
+                  href="https://www.rfc-editor.org/rfc/pdfrfc/rfc2549.txt.pdf"
+                  download
+                >
+                  PDF
+                </a>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </section>
+
       <hr />
     </main>
   </body>

@@ -45,22 +45,15 @@ html {
   @apply text-emerald-400 bg-slate-700;
 }
 
-.term_cursor{
-  @apply font-bold animate-duration-300 animate-pulse text-emerald-400 bg-slate-700
+.term-cursor{
+  @apply border-r-4 border-emerald-400 animate-pulse animate-duration-300;
 }
 
-.blink{
-  animation: blink-animation 0.3s steps(5, start) infinite;
-  -webkit-animation: blink-animation 0.3s steps(5, start) infinite;
-}
+.firafont{
+  font-family: "Fira Code", monospace;
 
-@keyframes blink-animation {
-  to {
-    visibility: hidden;
-  }
 }
-@-webkit-keyframes blink-animation {
-  to {
-    visibility: hidden;
-  }
+.language-bash {
+  font-size: 1.2rem;
+  font-family: "Fira Code", monospace;
 }
