@@ -650,11 +650,18 @@
             </div>
           </div>
         </div>
+        <div
+          class="hidden mt-12 w-full h-full absolute shadow-lg border-slate-700 p-4 bg-gradient-to-tr from-slate-600 to-slate-400 border-4 rounded top-0 left-0 z-20"
+        >
+        <pre class="border bg-cyan-900/50 flex flex-col">
+          <span class="material-symbols-outlined p-2"> terminal </span>
+          <code class="language-bash text-indigo-600 font-bold bg-black">
+              sed -i 's/old_string/new_string/g' file.txt
+          </code>
+        </pre>
+          <p class="font-bold term-locator p-2 firafont">[tibo@blackmesa ~]$</p>
 
-        <div class="mt-12">
-          <p class="font-bold term-locator firafont">[tibo@blackmesa ~]$</p>
-
-          <div class="relative flex items-end bg-slate-700">
+          <div class="flex items-end bg-slate-700 p-4">
             <p id="consolecatchphrase" class="i18n text-justify term-txt px-2">
               >
             </p>
@@ -662,26 +669,6 @@
               id="consolecatchphrase"
               class="term-cursor mb-1 mr-2 left-0"
             ></span>
-          </div>
-
-          <pre>
-            <code class="language-bash">
-                <!-- here is a exemple of a bash script to replace a string by an other and save the result in a file -->
-                <span class="material-symbols-outlined"> info </span>
-                sed -i 's/old_string/new_string/g' file.txt
-            </code>
-          </pre>
-
-          <div>
-            <h6>🔗</h6>
-            <a href="https://github.com/ThibaultMariePro/">my_github</a>
-            <hr />
-            <a
-              download
-              href="https://github.com/ThibaultMariePro/cv/raw/main/pdf/CV310123.pdf"
-            >
-              <button>my_resume</button>
-            </a>
           </div>
         </div>
       </header>
@@ -699,7 +686,9 @@
             </thead>
             <tbody class="*:bg-gradient-to-r *:from-transparent *:to-hlorange">
               <tr class="hover:from-portalblue hover:to-indigo-400 shadow-md">
-                <td class="text-center font-bold hover:text-white">La rhéologie des chats</td>
+                <td class="text-center font-bold hover:text-white">
+                  La rhéologie des chats
+                </td>
                 <td>
                   <a
                     target="_blank"
