@@ -11,6 +11,8 @@
 
     --color-light: 0deg 0% 100%;
     --color-dark: 0deg 0% 0%;
+
+    --color-space:237deg 17% 25%;
   }
 }
 
@@ -20,14 +22,9 @@ html {
 }
 
 .btn {
-  @apply h-8 w-auto flex items-center transition px-4 rounded-full shadow shadow-slate-800 bg-gradient-to-tr from-hlorange to-orange-700 text-white text-lg font-bold;
-
-  &:hover {
-    @apply scale-105 bg-gradient-to-tr from-orange-700 to-orange-800 shadow-slate-700 shadow-md transition [text-shadow:_1px_1px_0_rgb(0_0_0_/_40%)] ;
-  }
-  &:active{
-    @apply scale-100 bg-gradient-to-t from-hlorange to-hlorange shadow-slate-950 shadow-sm;
-  }
+  @apply font-bold text-white bg-lostcyan px-4 py-2 rounded-full shadow-md flex items-center justify-center size-fit text-center;
+  @apply dark:bg-abyss shadow shadow-amber-100;
+  @apply hover:bg-space;
 }
 
 .glass {
@@ -47,13 +44,4 @@ html {
 
 .term-cursor{
   @apply border-r-4 border-emerald-400 animate-pulse animate-duration-300;
-}
-
-.firafont{
-  font-family: "Fira Code", monospace;
-
-}
-.language-bash {
-  font-size: 1.2rem;
-  font-family: "Fira Code", monospace;
 }
