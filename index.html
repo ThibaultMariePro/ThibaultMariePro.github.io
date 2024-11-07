@@ -12,7 +12,9 @@
 
 <noscript>You must enable Javascript to fully enjoy this website</noscript>
 
-<script>
+<script type="module">
+  import { content } from "./content.js";
+
   const dark = {
     label: "dark",
     symbol: "dark_mode",
@@ -22,39 +24,13 @@
     symbol: "light_mode",
   };
 
-  const fr = {
-    lang: "fr",
-    switchLangBtn: "fr",
-    hello: "Salut le monde!",
-    job: "Développeur Web Fullstack | Concepteur Développeur d'Applications",
-    whoami: "Je suis un webdev très original, accro au café.",
-    consolecatchphrase:
-      "Vous savez, moi je ne crois pas qu’il y ait de bonne ou de mauvaise tech. Moi, si je devais résumer ma folie des internets aujourd’hui avec vous, je dirais que c’est d’abord des rencontres. Des gens qui m’ont tendu la main, peut-être à un moment où je ne pouvais pas, où j’étais seul chez moi. Et c’est assez curieux de se dire que les hasards, les rencontres forgent une carrière dans cette folle époque du digital (je déteste quand on dit digital là où il faudrait dire numérique)... Parce que quand on a le goût de la chose, quand on a le goût de la chose bien faite, le beau geste, parfois on ne trouve pas l’interlocuteur en face je dirais, le débugueur qui vous aide à avancer. Alors ça n’est pas mon cas, comme je disais là, puisque moi au contraire, j’ai pu ; et je dis merci à la folie des internets, je lui dis merci, je chante la folie des internets, je danse la folie des internets... je ne suis qu’amour ! Et finalement, quand des gens me disent « Mais comment fais-tu pour avoir cette passion propre à ton époque ? », je leur réponds très simplement que c’est ce goût de l’amour, ce goût donc qui m’a poussé aujourd’hui à entreprendre une ascension ambitieuse... mais demain qui sait ? Peut-être simplement à me mettre au service de la communauté, à faire le don, le don de soi.",
-    mailme: "✉️ envoyez moi un mail :)",
-    stuff: "Trucs que je trouve importants",
-    career: "Je suis Thibault MARIE, concepteur et développeur d'applications, animé par une passion pour l'efficacité et l'optimisation des systèmes de travail, à la fois techniques et humains. Je ressens souvent que c'est une occasion manquée lorsque les projets sont freinés par l'inertie : des équipes qui communiquent trop peu, du code qui mérite d'être refactorisé et documenté, ou des flux de travail rigides et mal adaptés aux besoins uniques d'une organisation. Pour moi, chaque défi est une opportunité d'investir pour rendre le système plus fluide. Ma carrière a commencé en 2013 avec ma première expérience dans le trading de cryptomonnaies en tant que freelance. Au fil des ans, j'ai construit un rig de minage, conçu des algorithmes de prise de décision et affiné mes compétences en gestion des risques. Ces activités m'ont appris à prendre des décisions rapides et réfléchies, équilibrant constamment les compromis coûts-avantages, ce qui a aiguisé mes capacités d'analyse et ma résilience. En 2020, j'ai eu la chance de rejoindre une équipe travaillant sur une application visant à sensibiliser au sexisme au travail. Ce projet, exigeant sur les plans humain et technique, m'a permis de contribuer à la sécurité des données et de m'engager dans un sujet important. À ce moment-là, j'ai travaillé avec SailsJS et MongoDB. J'ai pris conscience de l'impact positif qu'un code bien structuré et documenté peut avoir sur la longévité d'un projet et sa facilité d'évolution. Travaillant en binôme, j'ai appris à apprécier la refonte des flux de travail pour développer efficacement et harmoniser différents styles de travail. Au cours de ces années, je me suis également concentré sur la validation de diplômes pour formaliser mes compétences, passant d'un apprenant passionné à un professionnel. J'ai obtenu deux diplômes consécutifs et ai finalement atteint le statut de Concepteur-Développeur d'Applications. En 2023, j'ai contribué au développement d'une application dédiée à la Qualité de Vie au Travail au sein d'une nouvelle équipe. Ce projet m'a permis de approfondir mes compétences en gestion de projet et de travailler avec des technologies comme Docker, Makefile, bash et htmx. La grande variété de tâches et l'opportunité de m'engager dans la R&D m'ont permis de plonger dans des sujets fascinants, de la sécurité des serveurs aux modèles UX documentés par la recherche scientifique, en passant par les normes RFC. J'ai également eu l'occasion de présenter un projet de migration pour une base de données impliquant une restructuration et un typage fort. J'ai travaillé avec le framework GaboX MVC, ce qui a renforcé l'importance de l'architecture modulaire et, comme toujours, de la documentation interne. Collaborant avec un collègue, j'ai réécrit notre documentation d'environnement, essentielle pour travailler dans un contexte technique très spécifique. À ce stade, je me suis profondément engagé dans la réduction de l'inertie du système. En mai 2024, avec ce bagage, j'ai lancé reverse814 , ma propre entreprise de développement, où j'implémente une vision affinée au fil des ans. Je me suis immergé dans tous les aspects de mes projets, offrant des environnements conteneurisés, une documentation structurée et intégrant des technologies comme Symfony, VueJS et des API d'IA. Mon approche est centrée sur l'établissement de relations solides avec les clients, l'identification des besoins uniques et la fourniture de solutions durables, personnalisées et optimisées. Dans chaque projet, mon objectif est d'établir des bases solides qui facilitent la maintenance et la scalabilité, réduisent l'inertie et favorisent la fluidité de l'équipe. Je poursuis mon voyage de découverte technique avec passion, n'hésitant pas à investir du temps dans la conception, l'observation du système et la critique constructive."
-  };
-
-  const en = {
-    lang: "en",
-    switchLangBtn: "en",
-    hello: "Hello World!",
-    job: "Fullstack Web Developer | Software Designer",
-    whoami: "I'm a very original webdev, addicted to coffee.",
-    consolecatchphrase:
-      "You know, I don't think there's such a thing as good tech or bad tech. If I had to sum up my Internet_mania with you today, I'd say it's all about meeting people. People who reached out to me, perhaps at a time when I couldn't, when I was home alone. And it's quite strange to think that serendipity and encounters forge a career in this crazy digital age (I hate it when we say digital when we should say digital).... Because when you've got a taste for things, when you've got a taste for things well done, for beautiful gestures, sometimes you just can't find the right person to talk to, I'd say, the debugger who can help you move forward. So that's not my case, as I was saying, because on the contrary, I've been able to; and I say thank you to Internet_madness, I say thank you to it, I sing Internet_madness, I dance Internet_madness... I'm all about love! And finally, when people say to me \"But how did you manage to have this passion_of_your_own_time?\", I answer them very simply that it's this taste for love, this taste that has driven me today to undertake an ambitious climb... but tomorrow, who knows? Perhaps simply to put myself at the service of the community, to make the gift, the gift of self.",
-    mailme: "✉️ mail me :)",
-    stuff: "Stuff I find important",
-    career: "I am Thibault MARIE, an application designer and developer, driven by a passion for efficiency and optimizing work systems, both technical and human. I often feel it’s a missed opportunity when projects are held back by inertia: teams that communicate too little, code that deserves to be refactored and documented, or workflows that are rigid and poorly tailored to an organization’s unique needs. To me, every challenge is an opportunity to invest in making the system more fluid. My career began in 2013 with my first experience in cryptocurrency trading as a freelancer. Over the years, I built a mining rig, designed decision-making algorithms, and honed my risk management skills. These activities taught me how to make swift and thoughtful decisions, constantly balancing cost-benefit trade-offs, which sharpened my analytical abilities and resilience.In 2020, I was fortunate to join a team working on an application aimed at raising awareness around workplace sexism. This project, demanding on both human and technical fronts, allowed me to contribute to data security and engage with a meaningful topic. At that time, I worked with SailsJS and MongoDB. I became aware of the positive impact well-structured and documented code can have on a project’s longevity and ease of evolution. Working in pairs, I learned to appreciate rethinking workflows to develop efficiently and harmonize different work styles.During these years, I also focused on validating diplomas to formalize my skills, transitioning from a passionate learner to a professional. I earned two consecutive degrees and ultimately achieved the status of Application Designer-Developer.In 2023, I contributed to the development of an application dedicated to Quality of Life at Work within a new team. This project allowed me to deepen my project management skills and work with technologies like Docker, Makefile, bash, and htmx. The wide variety of tasks and the opportunity to engage in R&D enabled me to delve into fascinating topics, from server security to UX patterns documented by scientific research, to RFC standards. I also had the opportunity to present a migration project for a database that involved restructuring and strong typing. I worked with the GaboX MVC framework, which reinforced the importance of modular architecture and, as always, internal documentation. Collaborating with a colleague, I rewrote our environment documentation, essential for work in a highly specific technical context. At that point, I became deeply engaged with the topic of reducing system inertia.In May 2024, with this background, I launched reverse814, my own development company, where I implement a vision refined over the years. I’ve immersed myself in every aspect of my projects, offering containerized environments, structured documentation, and integrating technologies like Symfony, VueJS, and AI APIs. My approach centers on building strong client relationships, identifying unique needs, and providing durable, customized, and optimized solutions. In every project, my goal is to establish solid foundations that facilitate maintenance and scalability, reduce inertia, and foster team fluidity. I continue my journey of technical discovery with passion, unafraid to invest time in design, system observation, and constructive critique."
-  };
-
   let i18n = null;
   let theme = null;
 
   // --------- state init --------- //
   onload = () => {
     // --------- i18n setting --------- //
-    document.documentElement.lang == "en" ? (i18n = en) : (i18n = fr);
+    document.documentElement.lang == "en" ? (i18n = "en") : (i18n = "fr");
     // -- theme setting -- //
     document.documentElement.classList.contains("dark")
       ? (theme = dark)
@@ -62,11 +38,20 @@
     document.documentElement.classList = theme.label;
     // --------- content setting --------- //
     // hello world //
-    document.querySelector("#hello").innerHTML = i18n.hello;
+    document.querySelector("#hello").innerHTML = content[i18n].hello;
+    console.log(content.fr.hello);
     // whoami //
-    document.querySelector("#whoami").innerHTML = i18n.whoami;
+    document.querySelector("#whoami").innerHTML = content[i18n].whoami;
     // career //
-    document.querySelector("#career").innerHTML = i18n.career;
+    document.querySelector("#careerTitle").innerHTML = content[i18n].careerTitle;
+    document.querySelector("#careerP1").innerHTML = content[i18n].careerP1;
+    document.querySelector("#careerP2").innerHTML = content[i18n].careerP2;
+    document.querySelector("#careerP3").innerHTML = content[i18n].careerP3;
+    document.querySelector("#careerP4").innerHTML = content[i18n].careerP4;
+    document.querySelector("#careerP5").innerHTML = content[i18n].careerP5;
+    document.querySelector("#careerP6").innerHTML = content[i18n].careerP6;
+    document.querySelector("#careerP7").innerHTML = content[i18n].careerP7;
+    document.querySelector("#careerP8").innerHTML = content[i18n].careerP8;
     // Event Listeners //
     document.querySelector("#switchLangBtn").addEventListener("click", () => {
       switchLang();
@@ -81,26 +66,27 @@
       theme.label == "dark" ? (theme = light) : (theme = dark);
       document.documentElement.classList = theme.label;
       document.querySelector("#switchThemeBtn span").innerHTML = theme.symbol;
-      console.warn("theme :" + document.documentElement.classList);
     }
 
     function switchLang(component) {
-      i18n.lang == "en" ? (i18n = fr) : (i18n = en);
-      document.documentElement.lang = i18n.lang;
-      i18ncomponents = document.querySelectorAll(".i18n");
-      i18ncomponents.forEach((element) => {
-        element.innerHTML = i18n[element.id];
+      content[i18n].lang == "en" ? (i18n = "fr") : (i18n = "en");
+      document.documentElement.lang = content[i18n].lang;
+      let i18nComponents = document.querySelectorAll(".i18n");
+      console.log(content[i18n][careerP1]);
+      console.log(content["fr"]);
+      console.log(content["fr"].careerP1);
+      i18nComponents.forEach((element) => {
+        element.innerHTML = content[i18n][element.id];
       });
-      console.warn("lang :" + document.documentElement.lang);
     }
   };
 </script>
 
 <body class="bg-gradient-to-r from-fuchsia-300 to-cyan-200 dark:from-black dark:to-abyss">
 
-  <div id="background"
-    class="fixed h-screen w-screen top-0 -z-10">
-    <p id="blackmesa" class="uppercase text-justify select-none bg-gradient-to-t from-hlorange/20 to-portalblue/20 text-transparent bg-clip-text">
+  <div id="background" class="fixed h-screen w-screen top-0 -z-10">
+    <p id="blackmesa"
+      class="uppercase text-justify select-none bg-gradient-to-t from-hlorange/20 to-portalblue/20 text-transparent bg-clip-text">
       The title "Half-Life" fades into a first person perspective of the
       inside of an automated train. Words appear on screen: "Black Mesa
       Research Facility: Black Mesa, New Mexico". A recorded message begins to
@@ -492,52 +478,82 @@
     </p>
   </div>
 
-  <nav class="inline-flex p-2 space-x-4 ">
+  <nav class="
+    fixed z-10 bottom-0 right-0 lg:top-0 lg:left-0
+    inline-flex flex-col items-center space-y-8 w-fit m-8
+    bg-gradient-to-t from-space/20 to-abyss/20 backdrop-blur h-fit py-4 px-2 rounded-2xl
+    hover:from-hlorange/20 hover:to-powwine/20 hover:backdrop-blur-lg transition-all duration-500
+    ">
     <button class="i18n btn" id="switchLangBtn">en</button>
-
     <button class="btn" id="switchThemeBtn">
       <span class="material-symbols-outlined mx-1">
         dark_mode
       </span>
     </button>
-
     <a class="btn block" id="dl-resume" href="./assets/Thibault_Marie_CV241024.pdf" download>
       <span class="material-symbols-outlined"> download </span>
     </a>
-
     <a class="btn block" id="githublink" href="https://github.com/ThibaultMariePro" target="_blank">
       <img src="./github-mark-white.svg" alt="github" class="object-cover h-6 w-auto" />
     </a>
+    <a class="btn" href="page-two.html">
+      <span class="material-symbols-outlined">
+        arrow_forward
+      </span>
+    </a>
   </nav>
 
-  <main
-    class="overflow-auto w-3/4 h-3/4 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-space/50 backdrop-blur-sm rounded-2xl">
-    <header class="bg-black/20 p-2 rounded-xl lg:w-1/2 m-auto">
-      <div class="shadow bg-hlorange border rounded m-2 flex justify-center items-center p-1">
-        <span class="material-symbols-outlined"> public </span>
-        <h1 id="hello" class="i18n text-center font-bold text-xl"></h1>
+  <header class="bg-abyss/10 p-4 rounded-2xl lg:w-1/2 mx-auto lg:my-12 border border-solid border-white/20">
+    <div class="shadow bg-hlorange border rounded m-2 flex justify-center items-center p-1">
+      <span class="material-symbols-outlined"> public </span>
+      <h1 id="hello" class="i18n text-center font-bold text-xl"></h1>
+    </div>
+    <div>
+      <div id="terminal-whoami" class="flex flex-col lg:flex-row items-center m-2 p-2 bg-space">
+        <span class="material-symbols-outlined text-hlorange">
+          local_cafe
+        </span>
+        <p class="font-bold term-locator firafont">[tibo@reverse814 ~]&nbsp;</p>
+        <p class="i18n term-txt" id="whoami"></p>
+        <span class="term-cursor hidden lg:block">&nbsp;</span>
       </div>
+    </div>
+  </header>
 
-      <div>
-        <div id="terminal-whoami" class="flex items-center m-2 p-2 bg-slate-700">
-          <span class="material-symbols-outlined text-hlorange">
+  <main class="lg:w-3/4 m-auto 
+      p-4 bg-abyss/10 backdrop-blur-sm rounded-2xl
+      border border-solid border-white/20
+    ">
+
+    <section class="dark:bg-space/30 backdrop-blur-sm rounded-2xl">
+      <article id="aboutme" class="p-8 text-justify columns-[300px]">
+
+        <div class="flex space-x-2 border-b mb-2 text-xl">
+          <span class="material-symbols-outlined text-powwine dark:text-hlorange">
             local_cafe
           </span>
-          <p class="font-bold term-locator firafont">[tibo@blackmesa ~] ></p>
-          <p class="i18n term-txt" id="whoami"></p>
-          <span class="term-cursor">&nbsp;</span>
+          <h1 id="careerTitle" class="i18n text-center text-powwine dark:text-hlorange"></h1>
         </div>
-      </div>
-    </header>
-
-    <section class="glass">
-      <div class="p-8 text-justify columns-[300px]">
-        <p id="career" class="i18n"></p>
-      </div>
-      <hr class="border-b border-solid border-b-lostcyan">
+        <p id="careerP1" class="i18n"></p>
+        <img src="assets/article/mohammad-rahmani-6tG4sQx0dh4-unsplash.jpg" alt="a-person-typing-on-a-laptop-in-the-dark">
+        <p id="careerP2" class="i18n"></p>
+        <img src="assets/article/giorgio-trovato-hZeOr6qyiaw-unsplash.jpg" alt="2-people-sitting-on-chair-near-window-during-sunset">
+        <img src="assets/article/drew-dizzy-graham-cTKGZJTMJQU-unsplash.jpg" alt="woman-peeking-over-green-leaf-plant-taken-at-daytime">
+        <p id="careerP3" class="i18n"></p>
+        <img src="assets/article/julien-riedel-alGtgU3MQu4-unsplash.jpg" alt="gray-concrete-road-between-buildings">
+        <p id="careerP4" class="i18n"></p>
+        <img src="assets/article/jona-ft6TweD_VPU-unsplash.jpg" alt="a-3d-model-of-a-structure-with-red-and-blue-balls">
+        <p id="careerP5" class="i18n"></p>
+        <img src="assets/article/hal-gatewood-tZc3vjPCk-Q-unsplash.jpg" alt="assorted-color-abstract-painting">
+        <p id="careerP6" class="i18n italic"></p>
+        <img src="assets/article/ryoji-iwata-wUZjnOv7t0g-unsplash.jpg" alt="man-in-black-formal-suit-jacket-and-pants-carrying-black-bag-while-walking-on-pedestrian-lane-during-daytime">
+        <p id="careerP7" class="i18n"></p>
+        <img src="assets/article/sam-moghadam-khamseh-KJ241ZAOYwU-unsplash.jpg" alt="man-in-black-jacket-standing-on-blue-lighted-room">
+        <p id="careerP8" class="i18n border-b"></p>
+      </article>
     </section>
-
   </main>
+
 </body>
 
 </html>
