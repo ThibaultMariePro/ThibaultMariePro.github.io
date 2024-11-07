@@ -5,43 +5,45 @@
 @layer base {
   :root {
     font-family: Noto Sans, sans-serif;
-
     --color-hlorange: 28deg 97% 53%;
     --color-portalblue: 202deg 100% 50%;
-
     --color-light: 0deg 0% 100%;
     --color-dark: 0deg 0% 0%;
-
     --color-space:237deg 17% 25%;
   }
 }
 
 html {
-  height: 100vh;
   width: 100vw;
 }
 
 .btn {
-  @apply font-bold text-white bg-lostcyan px-4 py-2 rounded-full shadow-md flex items-center justify-center size-fit text-center;
-  @apply dark:bg-abyss shadow shadow-amber-100;
-  @apply hover:bg-space;
-}
-
-.glass {
-  background: rgba(255, 255, 255, 0.4);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  @apply font-bold text-white bg-orange-800 invert px-4 py-2 rounded-full shadow-md flex items-center justify-center size-fit text-center ;
+  @apply dark:bg-abyss dark:invert-0 shadow-sm shadow-amber-100;
+  @apply hover:bg-space hover:shadow hover:shadow-white transition-all duration-200;
 }
 
 .term-locator{
-  @apply font-bold text-hlorange bg-slate-700 px-1;
+  @apply font-bold text-hlorange px-1;
 }
 
 .term-txt {
-  @apply text-emerald-400 bg-slate-700;
+  @apply text-powcyan;
 }
 
 .term-cursor{
-  @apply border-r-4 border-emerald-400 animate-pulse animate-duration-300;
+  @apply border-r-4 animate-pulse animate-duration-300;
+}
+
+article{
+  & p{
+    @apply text-justify text-lg;
+    @apply bg-gradient-to-r text-transparent bg-clip-text from-lostdeepwine via-lostwine to-lostdeepwine;
+    @apply dark:from-lostcyan dark:via-powcyan dark:to-lostcyan;
+  }
+  & img{
+    @apply size-72 mx-auto my-4;
+    @apply object-cover;
+    @apply rounded-2xl shadow-lg;
+  }
 }
