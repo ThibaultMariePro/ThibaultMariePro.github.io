@@ -13,21 +13,12 @@
 <noscript>You must enable Javascript to fully enjoy this website</noscript>
 
 <script type="module">
-    import { content } from "./content.js";
-
-    const dark = {
-        label: "dark",
-        symbol: "dark_mode",
-    };
-    const light = {
-        label: "light",
-        symbol: "light_mode",
-    };
-
-    let i18n = null;
-    let theme = null;
+    import { content } from "./assets/scripts/content.js";
+    import { dark, light } from "./assets/scripts/theme.js";
 
     // --------- state init --------- //
+    let i18n = null;
+    let theme = null;
     onload = () => {
         // --------- i18n setting --------- //
         document.documentElement.lang == "en" ? (i18n = "en") : (i18n = "fr");
@@ -38,8 +29,8 @@
         document.documentElement.classList = theme.label;
         // --------- content setting --------- //
         // hello world //
-        document.querySelector("#hello").innerHTML = content[i18n].hello;
-        console.log(content.fr.hello);
+        document.querySelector("#workTitle").innerHTML = content[i18n].workTitle;
+        console.log(content.fr.workTitle);
         // whoami //
         document.querySelector("#whoami").innerHTML = content[i18n].whoami;
         // Technologie //
@@ -63,9 +54,6 @@
             content[i18n].lang == "en" ? (i18n = "fr") : (i18n = "en");
             document.documentElement.lang = content[i18n].lang;
             let i18nComponents = document.querySelectorAll(".i18n");
-            console.log(content[i18n][careerP1]);
-            console.log(content["fr"]);
-            console.log(content["fr"].careerP1);
             i18nComponents.forEach((element) => {
                 element.innerHTML = content[i18n][element.id];
             });
@@ -73,9 +61,12 @@
     };
 </script>
 
-<body class="bg-gradient-to-r from-fuchsia-300 to-cyan-200 dark:from-black dark:to-abyss">
+<body class="bg-gradient-to-r from-fuchsia-200 to-cyan-200 dark:from-black dark:to-abyss">
 
     <div id="background" class="fixed h-screen w-screen top-0 -z-10">
+        <div class="
+        absolute top-1/2 w-full h-1 bg-gradient-to-r from-portalblue/10 via-portalblue to-portalblue/10">
+        </div>
         <p id="blackmesa"
             class="uppercase text-justify select-none bg-gradient-to-t from-hlorange/20 to-portalblue/20 text-transparent bg-clip-text">
             The title "Half-Life" fades into a first person perspective of the
@@ -485,7 +476,7 @@
             <span class="material-symbols-outlined"> download </span>
         </a>
         <a class="btn block" id="githublink" href="https://github.com/ThibaultMariePro" target="_blank">
-            <img src="./github-mark-white.svg" alt="github" class="object-cover h-6 w-auto" />
+            <img src="./assets/icons/github-mark-white.svg" alt="github" class="object-cover h-6 w-auto" />
         </a>
         <a class="btn" href="index.html">
             <span class="material-symbols-outlined">
@@ -515,151 +506,111 @@
       p-4 bg-abyss/10 backdrop-blur-sm rounded-2xl
       border border-solid border-white/20
     ">
-
         <section class="dark:bg-space/30 backdrop-blur-sm rounded-2xl">
-            <article id="aboutme" class="p-8 text-justify columns-[300px]">
-
+            <article id="work" class="p-8 text-justify text-white">
                 <div class="flex space-x-2 border-b mb-2 text-xl">
                     <span class="material-symbols-outlined text-powwine dark:text-hlorange">
                         local_cafe
                     </span>
-                    <h1 class="text-center text-powwine dark:text-hlorange">Technologie</h1>
+                    <h1 id="workTitle" class="i18n text-center text-powwine dark:text-hlorange"></h1>
                 </div>
-                <!-- <img src="assets/ales-nesetril-Im7lZjxeLhg-unsplash.jpg" alt=""> -->
-                <!-- <img src="assets/andras-vas-Bd7gNnWJBkU-unsplash.jpg" alt=""> -->
-                <!-- <img src="assets/jorge-vasconez-buYlndcNnjM-unsplash.jpg" alt=""> -->
-                <!-- <img src="assets/mark-basarab-z8ct_Q3oCqM-unsplash.jpg" alt=""> -->
-                <!-- <img src="assets/holden-baxter-oxQ0egaQMfU-unsplash.jpg" alt=""> -->
-                <!-- <img src="assets/paul-jooa9ewfj8A-unsplash.jpg" alt=""> -->
-
-                <ul class="text-white">
-                    <li>Outils de développement et gestion de versions
-                        <ul>
-                            <li>Docker</li>
-                            <li>Git</li>
-                            <li>GitFlow</li>
-                            <li>Arch Linux</li>
-                            <li>tmux</li>
-                            <li>vim</li>
-                            <li>neovim</li>
-                            <li>bash</li>
-                            <li>MakeFile</li>
-                            <li>Composer</li>
-                        </ul>
-                    </li>
-
-                    <li>Front-end
-                        <ul>
-                            <li>Langages et standards web
-                                <ul>
-                                    <li>HTML5</li>
-                                    <li>CSS3</li>
-                                    <li>JavaScript</li>
-                                </ul>
+                <div class="grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3">
+                    <div
+                        class="p-4 m-4 bg-space/20 dark:bg-abyss rounded-2xl border hover:border-portalblue hover:shadow-md hover:shadow-emerald-300">
+                        <div class="flex items-center space-x-2 text-xl">
+                            <span class="material-symbols-outlined text-powcyan font-bold text-3xl">
+                                counter_1
+                            </span>
+                            <h2 class="text-powcyan text-center font-bold ">Leave the project cleaner.</h2>
+                        </div>
+                        <hr class="m-2">
+                        <p class="text-justify">It is ultra easy for teams or company to pile up and leave dust under
+                            the carpet. Time and money
+                            are not infinite, and even if something should beneficiate from a refactoring, if it works,
+                            there's no reason to touch it until it breaks. And I must say it is not -unfortunately-
+                            always a
+                            bad thing in the market context where the business opportunity is more important than
+                            beautiful
+                            code. But sometimes, some of this dust is very likely to be seen or to disconfort a
+                            newcomer. In
+                            my case, I try to clean this type of dust.</p>
+                        <hr class="m-2">
+                        <ul class="list-disc list-inside text-powwine dark:text-white">
+                            <li>Poor documentation ?<br>I write it for you as I'm discovering how your project works.
                             </li>
-                            <li>Frameworks et bibliothèques front-end
-                                <ul>
-                                    <li>ReactJS</li>
-                                    <li>Vue</li>
-                                    <li>Nuxt</li>
-                                    <li>Next.js</li>
-                                </ul>
-                            </li>
-                            <li>Frameworks CSS
-                                <ul>
-                                    <li>Tailwind</li>
-                                    <li>Bootstrap</li>
-                                    <li>Bulma</li>
-                                    <li>Material UI</li>
-                                </ul>
-                            </li>
-                            <li>Pratiques de développement web
-                                <ul>
-                                    <li>SEO</li>
-                                    <li>Accessibility</li>
-                                    <li>Responsive Design</li>
-                                    <li>Progressive Web App</li>
-                                    <li>Single Page App</li>
-                                    <li>Server Side Rendering</li>
-                                </ul>
-                            </li>
+                            <li>Code not following the same pattern ?<br>I refactor it to make it more readable and
+                                maintainable.</li>
+                            <li>The dev environment is heavy and complicated to get into ?<br>I dockerize it.</li>
                         </ul>
-                    </li>
-
-                    <li>Back-end
-                        <ul>
-                            <li>Node.js</li>
-                            <li>Express</li>
-                            <li>PHP</li>
-                            <li>Python</li>
-                            <li>Golang</li>
-                            <li>Java</li>
-                            <li>Spring Boot</li>
-                            <li>Symfony</li>
-                            <li>API Platform</li>
+                        <hr class="m-2">
+                        <p class="text-justify">All of this things will bring value to your project, as you'll save time
+                            with your team, and
+                            your
+                            future collaborators.</p>
+                    </div>
+                    <div
+                        class="p-4 m-4 bg-space/20 dark:bg-abyss rounded-2xl border hover:border-portalblue hover:shadow-md hover:shadow-emerald-300">
+                        <div class="flex items-center space-x-2 text-xl">
+                            <span class="material-symbols-outlined text-powcyan font-bold">
+                                counter_2
+                            </span>
+                            <h2 class="text-powcyan font-bold">Care for the workflow.</h2>
+                        </div>
+                        <hr class="m-2">
+                        <p class="text-justify">
+                            It is crucial to keep the codebase clean, yes. But it is also important to take care of your
+                            overall company workflow. It is a team that builds your ideas, and to make a dream come
+                            true, we cannot tolerate inertia.
+                            Sometimes the symptoms are not visible, but the consequences are. I'll help you cure as much
+                            weakpoints as we'll dive into the very working core of your project.
+                        </p>
+                        <hr class="m-2">
+                        <ul class="list-disc list-inside text-powwine dark:text-white">
+                            <li>Your team should communicate enough.</li>
+                            <li>Some time should be allowed to pay back your technical debt.</li>
+                            <li>Ideas should have a place and time to be shared and discussed.</li>
+                            <li>System design and diagrams are your friends, let's draw your future efficency.</li>
                         </ul>
-                    </li>
+                        <hr class="m-2">
+                        <p class="text-justify"> I have been working in companies where the workflow was not optimal. I
+                            have
+                            been able to
+                            refactor it to make it more efficient.
+                            I make diagrams to be sure that everyone understands the process of the team, from the
+                            responsibilites to the proper communication that needs to be done.
+                        </p>
+                    </div>
+                    <div
+                        class="p-4 m-4 bg-space/20 dark:bg-abyss rounded-2xl border hover:border-portalblue hover:shadow-md hover:shadow-emerald-300">
+                        <div class="flex items-center space-x-2 text-xl">
+                            <span class="material-symbols-outlined text-powcyan font-bold">
+                                counter_3
+                            </span>
+                            <h2 class="text-powcyan font-bold">Quality matters.</h2>
+                        </div>
+                        <hr class="m-2">
+                        <p class="text-justify">It is not the concern of everyone, but I'll try to offer to you some
+                            expertise or advices if you want to. We can take time to consolidate your vision about your
+                            project.</p>
+                        <hr class="m-2">
 
-                    <li>Bases de données
-                        <ul>
-                            <li>MySQL</li>
-                            <li>PostgreSQL</li>
-                            <li>Doctrine</li>
+                        <ul class="list-disc list-inside text-powwine dark:text-white">
+                            <li>Respect of the environment</li>
+                            <li>Respect of the people</li>
+                            <li>Respect of the security</li>
+                            <li>Respect of the privacy</li>
+                            <li>Respect of the accessibility</li>
+                            <li>Respect of the design</li>
                         </ul>
-                    </li>
+                        <hr class="m-2">
 
-                    <li>Outils et services API
-                        <ul>
-                            <li>REST API</li>
-                            <li>Postman</li>
-                            <li>Insomnia</li>
-                            <li>Websockets</li>
-                            <li>OAuth2</li>
-                            <li>JWT</li>
-                        </ul>
-                    </li>
-
-                    <li>Architecture et méthodologies
-                        <ul>
-                            <li>MVC</li>
-                            <li>Micro services</li>
-                            <li>Agile</li>
-                            <li>Scrum</li>
-                            <li>Kanban</li>
-                        </ul>
-                    </li>
-
-                    <li>Autres outils et technologies
-                        <ul>
-                            <li>Webpack</li>
-                            <li>Vite</li>
-                            <li>Markdown</li>
-                            <li>WebAssembly</li>
-                        </ul>
-                    </li>
-
-                    <li>Technologies liées à Symfony
-                        <ul>
-                            <li>Symfony</li>
-                            <li>Twig</li>
-                            <li>Doctrine</li>
-                            <li>API Platform</li>
-                        </ul>
-                    </li>
-
-                    <li>Autres
-                        <ul>
-                            <li>Wordpress</li>
-                            <li>React Native</li>
-                            <li>Nginx</li>
-                            <li>GaboX</li>
-                        </ul>
-                    </li>
-                </ul>
-
-
-                <p id="careerP1" class="i18n"></p>
-
+                        <p class="text-justify">It doesn't have to be expensive to work on this subject. The potential
+                            value of those for
+                            your project is tremendous. You should be concerned by those values, but what's matter is
+                            also the fact that the aura of your project will grow with them, and your business
+                            opportunity along.</p>
+                    </div>
+                </div>
             </article>
         </section>
     </main>
