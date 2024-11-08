@@ -13,21 +13,12 @@
 <noscript>You must enable Javascript to fully enjoy this website</noscript>
 
 <script type="module">
-  import { content } from "./content.js";
-
-  const dark = {
-    label: "dark",
-    symbol: "dark_mode",
-  };
-  const light = {
-    label: "light",
-    symbol: "light_mode",
-  };
-
-  let i18n = null;
-  let theme = null;
+  import { content } from "./assets/scripts/content.js";
+  import { dark, light } from "./assets/scripts/theme.js";
 
   // --------- state init --------- //
+  let i18n = null;
+  let theme = null;
   onload = () => {
     // --------- i18n setting --------- //
     document.documentElement.lang == "en" ? (i18n = "en") : (i18n = "fr");
@@ -85,6 +76,9 @@
 <body class="bg-gradient-to-r from-fuchsia-300 to-cyan-200 dark:from-black dark:to-abyss">
 
   <div id="background" class="fixed h-screen w-screen top-0 -z-10">
+    <div class="
+      absolute top-1/2 w-full h-1 bg-gradient-to-r from-hlorange/10 via-hlorange to-hlorange/10">
+    </div>
     <p id="blackmesa"
       class="uppercase text-justify select-none bg-gradient-to-t from-hlorange/20 to-portalblue/20 text-transparent bg-clip-text">
       The title "Half-Life" fades into a first person perspective of the
@@ -494,7 +488,7 @@
       <span class="material-symbols-outlined"> download </span>
     </a>
     <a class="btn block" id="githublink" href="https://github.com/ThibaultMariePro" target="_blank">
-      <img src="./github-mark-white.svg" alt="github" class="object-cover h-6 w-auto" />
+      <img src="./assets/icons/github-mark-white.svg" alt="github" class="object-cover h-6 w-auto" />
     </a>
     <a class="btn" href="page-two.html">
       <span class="material-symbols-outlined">
@@ -503,7 +497,8 @@
     </a>
   </nav>
 
-  <header class="bg-abyss/10 p-4 rounded-2xl lg:w-1/2 mx-auto lg:my-12 border border-solid border-white/20">
+  <header
+    class="bg-abyss/10 p-4 rounded-2xl lg:w-1/2 mx-auto lg:my-12 border border-solid border-white/20 backdrop-blur-sm">
     <div class="shadow bg-hlorange border rounded m-2 flex justify-center items-center p-1">
       <span class="material-symbols-outlined"> public </span>
       <h1 id="hello" class="i18n text-center font-bold text-xl"></h1>
@@ -524,10 +519,8 @@
       p-4 bg-abyss/10 backdrop-blur-sm rounded-2xl
       border border-solid border-white/20
     ">
-
     <section class="dark:bg-space/30 backdrop-blur-sm rounded-2xl">
       <article id="aboutme" class="p-8 text-justify columns-[300px]">
-
         <div class="flex space-x-2 border-b mb-2 text-xl">
           <span class="material-symbols-outlined text-powwine dark:text-hlorange">
             local_cafe
@@ -535,20 +528,25 @@
           <h1 id="careerTitle" class="i18n text-center text-powwine dark:text-hlorange"></h1>
         </div>
         <p id="careerP1" class="i18n"></p>
-        <img src="assets/article/mohammad-rahmani-6tG4sQx0dh4-unsplash.jpg" alt="a-person-typing-on-a-laptop-in-the-dark">
+        <img src="assets/photos/mohammad-rahmani-6tG4sQx0dh4-unsplash.jpg"
+          alt="a-person-typing-on-a-laptop-in-the-dark">
         <p id="careerP2" class="i18n"></p>
-        <img src="assets/article/giorgio-trovato-hZeOr6qyiaw-unsplash.jpg" alt="2-people-sitting-on-chair-near-window-during-sunset">
-        <img src="assets/article/drew-dizzy-graham-cTKGZJTMJQU-unsplash.jpg" alt="woman-peeking-over-green-leaf-plant-taken-at-daytime">
+        <img src="assets/photos/giorgio-trovato-hZeOr6qyiaw-unsplash.jpg"
+          alt="2-people-sitting-on-chair-near-window-during-sunset">
+        <img src="assets/photos/drew-dizzy-graham-cTKGZJTMJQU-unsplash.jpg"
+          alt="woman-peeking-over-green-leaf-plant-taken-at-daytime">
         <p id="careerP3" class="i18n"></p>
-        <img src="assets/article/julien-riedel-alGtgU3MQu4-unsplash.jpg" alt="gray-concrete-road-between-buildings">
+        <img src="assets/photos/julien-riedel-alGtgU3MQu4-unsplash.jpg" alt="gray-concrete-road-between-buildings">
         <p id="careerP4" class="i18n"></p>
-        <img src="assets/article/jona-ft6TweD_VPU-unsplash.jpg" alt="a-3d-model-of-a-structure-with-red-and-blue-balls">
+        <img src="assets/photos/jona-ft6TweD_VPU-unsplash.jpg" alt="a-3d-model-of-a-structure-with-red-and-blue-balls">
         <p id="careerP5" class="i18n"></p>
-        <img src="assets/article/hal-gatewood-tZc3vjPCk-Q-unsplash.jpg" alt="assorted-color-abstract-painting">
+        <img src="assets/photos/hal-gatewood-tZc3vjPCk-Q-unsplash.jpg" alt="assorted-color-abstract-painting">
         <p id="careerP6" class="i18n italic"></p>
-        <img src="assets/article/ryoji-iwata-wUZjnOv7t0g-unsplash.jpg" alt="man-in-black-formal-suit-jacket-and-pants-carrying-black-bag-while-walking-on-pedestrian-lane-during-daytime">
+        <img src="assets/photos/ryoji-iwata-wUZjnOv7t0g-unsplash.jpg"
+          alt="man-in-black-formal-suit-jacket-and-pants-carrying-black-bag-while-walking-on-pedestrian-lane-during-daytime">
         <p id="careerP7" class="i18n"></p>
-        <img src="assets/article/sam-moghadam-khamseh-KJ241ZAOYwU-unsplash.jpg" alt="man-in-black-jacket-standing-on-blue-lighted-room">
+        <img src="assets/photos/sam-moghadam-khamseh-KJ241ZAOYwU-unsplash.jpg"
+          alt="man-in-black-jacket-standing-on-blue-lighted-room">
         <p id="careerP8" class="i18n border-b"></p>
       </article>
     </section>
