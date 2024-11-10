@@ -9,21 +9,21 @@
     --color-portalblue: 202deg 100% 50%;
     --color-light: 0deg 0% 100%;
     --color-dark: 0deg 0% 0%;
-    --color-space:237deg 17% 25%;
+    --color-space: 237deg 17% 25%;
   }
 }
 
-html {
-  width: 100vw;
+main{
+  margin: 5rem auto;
 }
 
 .btn {
-  @apply font-bold text-white bg-orange-800 invert px-4 py-2 rounded-full shadow-md flex items-center justify-center size-fit text-center ;
+  @apply font-bold text-white bg-orange-800 invert px-4 py-2 rounded-full shadow-md flex items-center justify-center size-fit text-center;
   @apply dark:bg-abyss dark:invert-0 shadow-sm shadow-amber-100;
   @apply hover:bg-space hover:shadow hover:shadow-white transition-all duration-200;
 }
 
-.term-locator{
+.term-locator {
   @apply font-bold text-hlorange px-1;
 }
 
@@ -31,19 +31,26 @@ html {
   @apply text-powcyan;
 }
 
-.term-cursor{
+.term-cursor {
   @apply border-r-4 animate-pulse animate-duration-300;
 }
 
-article{
-  & p{
+article {
+  & p {
     @apply text-justify text-lg;
     @apply bg-gradient-to-r text-transparent bg-clip-text from-lostdeepwine via-lostwine to-lostdeepwine;
     @apply dark:from-lostcyan dark:via-powcyan dark:to-lostcyan;
   }
-  & img{
-    @apply size-72 mx-auto my-4;
+  & img {
+    @apply h-48 w-full mx-auto my-4;
+    @apply lg:size-72 mx-auto my-4;
     @apply object-cover;
     @apply rounded-2xl shadow-lg;
   }
+
+  &#tech span{
+    @apply shadow hover:bg-abyss;
+    @apply cursor-pointer;
+  }
 }
+
