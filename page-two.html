@@ -461,14 +461,20 @@
     </div>
 
     <nav class="
-    fixed z-10 bottom-0 right-0 lg:top-0 lg:left-0
-    inline-flex flex-col items-center space-y-8 w-fit m-8
-    bg-gradient-to-t from-space/20 to-abyss/20 backdrop-blur h-fit py-4 px-2 rounded-2xl
+    bottom-0 right-0 
+    space-x-4 fixed z-10 w-fit py-2
+    m-2 flex items-center px-2 
+    lg:top-0 lg:left-0  
+    lg:py-4 lg:m-8 
+    lg:inline-flex lg:flex-col
+    lg:space-x-0 lg:space-y-2
+    bg-gradient-to-t from-space/20 to-abyss/20 backdrop-blur h-fit 
+    rounded-full
     hover:from-hlorange/20 hover:to-powwine/20 hover:backdrop-blur-lg transition-all duration-500
     ">
-        <button class="i18n btn" id="switchLangBtn">en</button>
+        <button class="i18n btn block" id="switchLangBtn">en</button>
         <button class="btn" id="switchThemeBtn">
-            <span class="material-symbols-outlined mx-1">
+            <span class="material-symbols-outlined">
                 dark_mode
             </span>
         </button>
@@ -502,9 +508,10 @@
         </div>
     </header>
 
-    <main class="lg:w-3/4 m-auto 
-      p-4 bg-abyss/10 backdrop-blur-sm rounded-2xl
-      border border-solid border-white/20
+    <main class="
+        lg:w-3/4 lg:p-4 
+        bg-abyss/10 backdrop-blur-sm rounded-2xl
+        border border-solid border-white/20
     ">
         <section class="dark:bg-space/30 backdrop-blur-sm rounded-2xl">
             <article id="work" class="p-8 text-justify text-white">
@@ -524,18 +531,17 @@
                             <h2 class="text-powcyan text-center font-bold ">Leave the project cleaner.</h2>
                         </div>
                         <hr class="m-2">
-                        <p class="text-justify">It is ultra easy for teams or company to pile up and leave dust under
-                            the carpet. Time and money
-                            are not infinite, and even if something should beneficiate from a refactoring, if it works,
-                            there's no reason to touch it until it breaks. And I must say it is not -unfortunately-
-                            always a
-                            bad thing in the market context where the business opportunity is more important than
-                            beautiful
-                            code. But sometimes, some of this dust is very likely to be seen or to disconfort a
-                            newcomer. In
-                            my case, I try to clean this type of dust.</p>
+                        <p class="text-justify">
+                            It’s all too easy for teams or companies to sweep things under the carpet. Time and money
+                            are limited, and even when something could benefit from refactoring, if it works, there’s
+                            often no reason to touch it until it breaks. Unfortunately—or fortunately, depending on
+                            perspective—this approach isn't always wrong, especially in a market where business
+                            opportunities are prioritized over perfect code. However, some of this 'dust' can eventually
+                            become visible or create discomfort for newcomers. In my case, I aim to clean up this kind
+                            of dust.
+                        </p>
                         <hr class="m-2">
-                        <ul class="list-disc list-inside text-powwine dark:text-white">
+                        <ul class="list-disc list-inside text-powwine dark:text-white space-y-4">
                             <li>Poor documentation ?<br>I write it for you as I'm discovering how your project works.
                             </li>
                             <li>Code not following the same pattern ?<br>I refactor it to make it more readable and
@@ -543,58 +549,55 @@
                             <li>The dev environment is heavy and complicated to get into ?<br>I dockerize it.</li>
                         </ul>
                         <hr class="m-2">
-                        <p class="text-justify">All of this things will bring value to your project, as you'll save time
-                            with your team, and
-                            your
+                        <p class="text-justify">
+                            All of these things will add value to your project, helping you save time with your team and
                             future collaborators.</p>
                     </div>
                     <div
                         class="p-4 m-4 bg-space/20 dark:bg-abyss rounded-2xl border hover:border-portalblue hover:shadow-md hover:shadow-emerald-300">
                         <div class="flex items-center space-x-2 text-xl">
-                            <span class="material-symbols-outlined text-powcyan font-bold">
+                            <span class="material-symbols-outlined text-powcyan font-bold text-3xl">
                                 counter_2
                             </span>
                             <h2 class="text-powcyan font-bold">Care for the workflow.</h2>
                         </div>
                         <hr class="m-2">
                         <p class="text-justify">
-                            It is crucial to keep the codebase clean, yes. But it is also important to take care of your
-                            overall company workflow. It is a team that builds your ideas, and to make a dream come
-                            true, we cannot tolerate inertia.
-                            Sometimes the symptoms are not visible, but the consequences are. I'll help you cure as much
-                            weakpoints as we'll dive into the very working core of your project.
+                            Keeping the codebase clean is crucial, of course. But it’s also essential to care for your
+                            company’s overall workflow. It’s the team that brings your ideas to life, and to realize a
+                            dream, we cannot afford inertia. Sometimes the symptoms aren’t immediately visible, but the
+                            consequences are. I’ll help you address weaknesses as we dive into the core of your project.
                         </p>
                         <hr class="m-2">
-                        <ul class="list-disc list-inside text-powwine dark:text-white">
-                            <li>Your team should communicate enough.</li>
-                            <li>Some time should be allowed to pay back your technical debt.</li>
-                            <li>Ideas should have a place and time to be shared and discussed.</li>
-                            <li>System design and diagrams are your friends, let's draw your future efficency.</li>
+                        <ul class="list-disc list-inside text-powwine dark:text-white space-y-4">
+                            <li>Your team should communicate effectively.</li>
+                            <li>Time should be allocated to address technical debt.</li>
+                            <li>Ideas should have a dedicated space and time to be shared and discussed.</li>
+                            <li>System design and diagrams are your friends, let's draw up your future efficency.</li>
                         </ul>
                         <hr class="m-2">
-                        <p class="text-justify"> I have been working in companies where the workflow was not optimal. I
-                            have
-                            been able to
-                            refactor it to make it more efficient.
-                            I make diagrams to be sure that everyone understands the process of the team, from the
-                            responsibilites to the proper communication that needs to be done.
+                        <p class="text-justify">
+                            I have worked in companies where the workflow was not optimal and was able to refactor it to
+                            improve efficiency. I create diagrams to ensure everyone understands the team’s processes,
+                            from responsibilities to the necessary communication.
                         </p>
                     </div>
                     <div
                         class="p-4 m-4 bg-space/20 dark:bg-abyss rounded-2xl border hover:border-portalblue hover:shadow-md hover:shadow-emerald-300">
                         <div class="flex items-center space-x-2 text-xl">
-                            <span class="material-symbols-outlined text-powcyan font-bold">
+                            <span class="material-symbols-outlined text-powcyan font-bold text-3xl">
                                 counter_3
                             </span>
                             <h2 class="text-powcyan font-bold">Quality matters.</h2>
                         </div>
                         <hr class="m-2">
-                        <p class="text-justify">It is not the concern of everyone, but I'll try to offer to you some
-                            expertise or advices if you want to. We can take time to consolidate your vision about your
-                            project.</p>
+                        <p class="text-justify">
+                            I can provide you expertise and advice to help your project shine. Together, we can take the time to
+                            consolidate your vision, applying guidelines to address critical issues that must not be
+                            overlooked in today's world.</p>
                         <hr class="m-2">
 
-                        <ul class="list-disc list-inside text-powwine dark:text-white">
+                        <ul class="list-disc list-inside text-powwine dark:text-white space-y-2">
                             <li>Respect of the environment</li>
                             <li>Respect of the people</li>
                             <li>Respect of the security</li>
@@ -604,17 +607,35 @@
                         </ul>
                         <hr class="m-2">
 
-                        <p class="text-justify">It doesn't have to be expensive to work on this subject. The potential
-                            value of those for
-                            your project is tremendous. You should be concerned by those values, but what's matter is
-                            also the fact that the aura of your project will grow with them, and your business
-                            opportunity along.</p>
+                        <p class="text-justify">
+                            Working on these values doesn’t have to be costly, yet the potential impact on your project
+                            is substantial. This priorities can elevate your project beyond the competition, setting a strong
+                            foundation for long-term success. These principles create not only a solid reputation but
+                            also inspire trust and loyalty from clients, users, and partners alike. By committing to
+                            these standards, you will craft a project that not only meets today’s high expectations but
+                            also stands resilient in tomorrow’s evolving market. Let’s work together to ensure your
+                            project not only succeeds but thrives with purpose and integrity.
+                        </p>
                     </div>
                 </div>
             </article>
         </section>
     </main>
 
+    <footer class="
+    fixed
+    top-0 right-0 
+    m-8 p-2 bg-abyss/50 backdrop-blur rounded-lg shadow-md
+    lg:bottom-0 lg:top-auto lg:m-2 lg:bg-none
+    ">
+        <a href="https://reverse814.dev/" class="text-portalblue flex items-end justify-end space-x-2 m-2"
+            target="_blank">
+            <img src="./assets/icons/CupoffeeOGcoffeetheme.png" alt="reverse814" class="object-cover h-12 w-auto" />
+            <h3 class="hidden lg:block">
+                reverse814
+            </h3>
+        </a>
+    </footer>
 </body>
 
 </html>
