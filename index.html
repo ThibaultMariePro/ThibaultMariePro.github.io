@@ -473,14 +473,20 @@
   </div>
 
   <nav class="
-    fixed z-10 bottom-0 right-0 lg:top-0 lg:left-0
-    inline-flex flex-col items-center space-y-8 w-fit m-8
-    bg-gradient-to-t from-space/20 to-abyss/20 backdrop-blur h-fit py-4 px-2 rounded-2xl
+    bottom-0 right-0 
+    space-x-4 fixed z-10 w-fit py-2
+    m-2 flex items-center px-2 
+    lg:top-0 lg:left-0  
+    lg:py-4 lg:m-8 
+    lg:inline-flex lg:flex-col
+    lg:space-x-0 lg:space-y-2
+    bg-gradient-to-t from-space/20 to-abyss/20 backdrop-blur h-fit 
+    rounded-full
     hover:from-hlorange/20 hover:to-powwine/20 hover:backdrop-blur-lg transition-all duration-500
     ">
-    <button class="i18n btn" id="switchLangBtn">en</button>
+    <button class="i18n btn block" id="switchLangBtn">en</button>
     <button class="btn" id="switchThemeBtn">
-      <span class="material-symbols-outlined mx-1">
+      <span class="material-symbols-outlined">
         dark_mode
       </span>
     </button>
@@ -515,8 +521,9 @@
     </div>
   </header>
 
-  <main class="lg:w-3/4 m-auto 
-      p-4 bg-abyss/10 backdrop-blur-sm rounded-2xl
+  <main class="
+      lg:w-3/4 lg:p-4 
+      bg-abyss/10 backdrop-blur-sm rounded-2xl
       border border-solid border-white/20
     ">
     <section class="dark:bg-space/30 backdrop-blur-sm rounded-2xl">
@@ -528,30 +535,47 @@
           <h1 id="careerTitle" class="i18n text-center text-powwine dark:text-hlorange"></h1>
         </div>
         <p id="careerP1" class="i18n"></p>
-        <img src="assets/photos/mohammad-rahmani-6tG4sQx0dh4-unsplash.jpg"
-          alt="a-person-typing-on-a-laptop-in-the-dark">
+        <img src="assets/photos/mohammad-rahmani-6tG4sQx0dh4-unsplash.jpg" alt="a-person-typing-on-a-laptop-in-the-dark"
+          loading="lazy">
         <p id="careerP2" class="i18n"></p>
         <img src="assets/photos/giorgio-trovato-hZeOr6qyiaw-unsplash.jpg"
-          alt="2-people-sitting-on-chair-near-window-during-sunset">
+          alt="2-people-sitting-on-chair-near-window-during-sunset" loading="lazy">
         <img src="assets/photos/drew-dizzy-graham-cTKGZJTMJQU-unsplash.jpg"
-          alt="woman-peeking-over-green-leaf-plant-taken-at-daytime">
+          alt="woman-peeking-over-green-leaf-plant-taken-at-daytime" loading="lazy">
         <p id="careerP3" class="i18n"></p>
-        <img src="assets/photos/julien-riedel-alGtgU3MQu4-unsplash.jpg" alt="gray-concrete-road-between-buildings">
+        <img src="assets/photos/julien-riedel-alGtgU3MQu4-unsplash.jpg" alt="gray-concrete-road-between-buildings"
+          loading="lazy">
         <p id="careerP4" class="i18n"></p>
-        <img src="assets/photos/jona-ft6TweD_VPU-unsplash.jpg" alt="a-3d-model-of-a-structure-with-red-and-blue-balls">
+        <img src="assets/photos/jona-ft6TweD_VPU-unsplash.jpg" alt="a-3d-model-of-a-structure-with-red-and-blue-balls"
+          loading="lazy">
         <p id="careerP5" class="i18n"></p>
-        <img src="assets/photos/hal-gatewood-tZc3vjPCk-Q-unsplash.jpg" alt="assorted-color-abstract-painting">
+        <img src="assets/photos/hal-gatewood-tZc3vjPCk-Q-unsplash.jpg" alt="assorted-color-abstract-painting"
+          loading="lazy">
         <p id="careerP6" class="i18n italic"></p>
         <img src="assets/photos/ryoji-iwata-wUZjnOv7t0g-unsplash.jpg"
-          alt="man-in-black-formal-suit-jacket-and-pants-carrying-black-bag-while-walking-on-pedestrian-lane-during-daytime">
+          alt="man-in-black-formal-suit-jacket-and-pants-carrying-black-bag-while-walking-on-pedestrian-lane-during-daytime"
+          loading="lazy">
         <p id="careerP7" class="i18n"></p>
         <img src="assets/photos/sam-moghadam-khamseh-KJ241ZAOYwU-unsplash.jpg"
-          alt="man-in-black-jacket-standing-on-blue-lighted-room">
+          alt="man-in-black-jacket-standing-on-blue-lighted-room" loading="lazy">
         <p id="careerP8" class="i18n border-b"></p>
       </article>
     </section>
   </main>
 
+  <footer class="
+    fixed
+    top-0 right-0 
+    m-4 p-2 bg-abyss/50 backdrop-blur rounded-lg shadow-md
+    lg:bottom-0 lg:top-auto lg:m-2 lg:bg-none
+    ">
+    <a href="https://reverse814.dev/" class="text-hlorange flex items-end justify-end space-x-2 m-2" target="_blank">
+      <img src="./assets/icons/CupoffeeOGcoffeetheme.png" alt="reverse814" class="object-cover h-12 w-auto" />
+      <h3 class="hidden lg:block">
+        reverse814
+      </h3>
+    </a>
+  </footer>
 </body>
 
 </html>
